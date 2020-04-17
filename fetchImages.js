@@ -1,4 +1,5 @@
 const axios = require('axios');
+const util = require('util')
 const fs = require('fs');
 let content = ''
 
@@ -10,7 +11,7 @@ axios.get('https://www.ign.com/wikis/animal-crossing-new-horizons/Villagers_and_
   let unique = new Set(content);
   console.log(unique)
 
-  fs.writeFile('./output.txt', unique, "utf8", function(err) {
+  fs.writeFile('./output.txt', util.inspect(unique), "utf8", function(err) {
     if (err) {
       console.error(err);
       process.exit(1);
