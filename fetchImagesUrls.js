@@ -9,7 +9,7 @@ axios.get('https://www.ign.com/wikis/animal-crossing-new-horizons/Villagers_and_
   content = resp.data.match(pattern);
   let unique = new Set(content);
 
-  fs.writeFile('./output.txt', util.inspect(unique), "utf8", function(err) {
+  fs.writeFile('./imageUrls.txt', util.inspect(unique), "utf8", function(err) {
     if (err) {
       console.error(err);
       process.exit(1);

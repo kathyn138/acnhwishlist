@@ -16,7 +16,7 @@ let download = function(url, dest, cb) {
   });
 };
 
-fs.readFile('output.txt', 'utf8', function (err, data) {
+fs.readFile('imageUrls.txt', 'utf8', function (err, data) {
   if (err) {
     // handle possible error
     console.error(err);
