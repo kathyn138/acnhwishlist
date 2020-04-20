@@ -391,4 +391,4 @@
   https://oyster.ignimgs.com/mediawiki/apis.ign.com/animal-crossing-new-horizons/2/2b/Skye_NewHorizon.png,
   https://oyster.ignimgs.com/mediawiki/apis.ign.com/animal-crossing-new-horizons/9/96/Vivian_NewHorizon.png,
   https://oyster.ignimgs.com/mediawiki/apis.ign.com/animal-crossing-new-horizons/6/69/Whitney_NewHorizon.png,
-  https://oyster.ignimgs.com/mediawiki/apis.ign.com/animal-crossing-new-horizons/7/79/Wolfgang_NewHorizon.png }
+  https://oyster.ignimgs.com/mediawiki/apis.ign.com/animal-crossing-new-horizons/7/79/Wolfgang_NewHorizon.png
