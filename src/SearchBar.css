@@ -1,0 +1,23 @@
+#search-input {
+  background-color: #FFFAE4;
+  border: 1px solid #FFFAE4;
+  border-radius: 10px;
+  color: rgba(131, 116, 87, 0.7);
+  left: 17%;
+}
+#search-input:focus {
+  box-shadow: none
+}
+/* Firefox */
+#search-input::placeholder {
+  color: rgba(131, 116, 87, 0.7);
+  opacity: 1; 
+}
+/* Internet Explorer 10-11 */
+#search-input:-ms-input-placeholder { 
+ color: rgba(131, 116, 87, 0.7);
+}
+/* Microsoft Edge */
+#search-input::-ms-input-placeholder { 
+ color: rgba(131, 116, 87, 0.7);
+}
