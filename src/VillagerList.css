@@ -1,12 +1,6 @@
-.villager-list {
-	/* position: relative; */
-	left: 50px;
-	/* width: 20%; */
-	/* height: 300px; */
-}
 .vl-top {
 	position: relative;
-	top: 30%;
+	top: 20%;
 	/* height: 29vw;
 	width: 52vw; */
 	width: 50vw;
@@ -33,4 +27,15 @@
 	left: 5%;
 	border-radius: 50%;
 	background: #FFFAE4;
+}
+.vl-data::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #D4CFB4;
+}
+.vl-data::-webkit-scrollbar {
+  width: 8px;
+}
+.vl-data::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #B7AC85;
 }
