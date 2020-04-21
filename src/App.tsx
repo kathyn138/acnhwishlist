@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import SearchBar from './SearchBar';
 import VillagerList from './VillagerList';
 
 class App extends React.PureComponent {
@@ -8,9 +9,12 @@ class App extends React.PureComponent {
     return (
       <div className="App container-fluid">
         <div className="row">
-          <VillagerList />
+          <div className="middle-section col-7">
+            <SearchBar />
+            <VillagerList />
+          </div>
         </div>
-    </div>
+      </div>
     );
   }
 }

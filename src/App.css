@@ -7,3 +7,9 @@
   /* padding: 0px; */
   height: 100vh;
 }
+.middle-section {
+	/* position: relative; */
+	left: 50px;
+	/* width: 20%; */
+	/* height: 300px; */
+}
