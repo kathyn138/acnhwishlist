@@ -4,6 +4,6 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 0px;
+  /* padding: 0px; */
   height: 100vh;
 }

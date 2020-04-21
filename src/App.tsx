@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
-// import backgroundUrl from './assets/biggerbg.jpeg'
+import VillagerList from './VillagerList';
 
-function App() {
-  return (
-    <div className="App container-fluid">
-      "home"
+class App extends React.PureComponent {
+
+  render() {
+    return (
+      <div className="App container-fluid">
+        <div className="row">
+          <VillagerList />
+        </div>
     </div>
-  );
+    );
+  }
 }
 
 export default App;

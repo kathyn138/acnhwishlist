@@ -1,0 +1,36 @@
+.villager-list {
+	/* position: relative; */
+	left: 50px;
+	/* width: 20%; */
+	/* height: 300px; */
+}
+.vl-top {
+	position: relative;
+	top: 30%;
+	/* height: 29vw;
+	width: 52vw; */
+	width: 50vw;
+	height: 29vw;
+	border-radius: 50%;
+	background: #FFFAE4;
+	/* box-shadow: 0px 200px 0 -10vw #FFFAE4; */
+	/* padding-bottom: 80%; */
+}
+.vl-data {
+	position: absolute;
+	overflow: auto;
+	height: 100%;
+	width: 72%;
+	top: 16%;
+	left: 15%;
+	z-index: 1;
+}
+.vl-bot {
+	position: absolute;
+	height: 17vw;
+	width: 45vw;
+	top: 70%;
+	left: 5%;
+	border-radius: 50%;
+	background: #FFFAE4;
+}
