@@ -6,6 +6,9 @@
   background-size: cover;
   /* padding: 0px; */
   height: 100vh;
+  /* /// is this necessary? bc doesnt bootstrap do this? idk */
+  display: flex;
+  flex-direction: column;
 }
 .middle-section {
 	/* position: relative; */

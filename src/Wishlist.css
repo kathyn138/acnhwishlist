@@ -1,0 +1,37 @@
+.wl-top {
+	position: relative;
+	width: 29vw;
+    height: 18vw;
+    top: 10%;
+	border-radius: 50%;
+	background: #FFFAE4;
+}
+.wl-data {
+	position: absolute;
+	overflow: auto;
+	height: 90%;
+	width: 72%;
+	top: 16%;
+	left: 15%;
+	z-index: 1;
+}
+.wl-bot {
+	position: absolute;
+	width: 25vw;
+	height: 9vw;
+	top: 70%;
+	left: 7%;
+	border-radius: 50%;
+	background: #FFFAE4;
+}
+.wl-data::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #D4CFB4;
+}
+.wl-data::-webkit-scrollbar {
+  width: 8px;
+}
+.wl-data::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #B7AC85;
+}
