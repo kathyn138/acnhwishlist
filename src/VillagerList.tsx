@@ -2,7 +2,7 @@ import React from 'react';
 import './VillagerList.css';
 import VillagerCard from './VillagerCard';
 
-class Home extends React.PureComponent {
+class VillagerList extends React.PureComponent {
 
   render() {
     return (
@@ -16,4 +16,4 @@ class Home extends React.PureComponent {
   }
 }
 
-export default Home;
+export default VillagerList;
