@@ -2,29 +2,29 @@ const fs = require('fs');
 
 let crankyVillagers = [
   'Admiral', 'Angus', 'Apollo', 'Avery', 'Boris', 'Boyd', 'Bruce',
-  'Butch', 'Buzz', 'Camofrog', 'Cesar', 'Champagne', 'Chief', 'Chow',
-  'Chuck', 'Croque', 'Curt', 'Cyd', 'Cyrano', 'Del', 'Dobie',
-  'Elvis', 'Fang', 'Flash', 'Frank', 'Ganon', 'Gaston', 'Gonzo',
+  'Butch', 'Buzz', 'Camofrog', 'Cesar', 'Chief', 'Chow',
+  'Croque', 'Curt', 'Cyd', 'Cyrano', 'Del', 'Dobie',
+  'Elvis', 'Fang', 'Frank', 'Gaston', 'Gonzo',
   'Grizzly', 'Groucho', 'Gruff', 'Hamphrey', 'Harry', 'Hopper', 'Ike',
-  'Jubei', 'Kabuki', 'Knox', 'Limberg', 'Lobo', 'Monty', 'Murphy',
-  'Octavian', 'Oxford', 'Peewee', 'Rasher', 'Ricky', 'Rizzo', 'Rocco',
+  'Kabuki', 'Knox', 'Limberg', 'Lobo', 'Monty', 'Murphy',
+  'Octavian', 'Peewee', 'Rasher', 'Ricky', 'Rizzo', 'Rocco',
   'Rolf', 'Rooney', 'Roscoe', 'Rowan', 'Spike', 'Static', 'T-Bone',
-  'Tom', 'Twirp', 'Verdun', 'Vic', 'Vladimir', 'Walt', 'Wart Jr.',
-  'Wolfgang',
+  'Tom', 'Vic', 'Vladimir', 'Walt', 'Wart Jr.',
+  'Wolfgang'
 ];
 
 let jockVillagers = [
-  'Ace', 'Analog', 'Antonio', 'Axel', 'Aziz', 'Bam', 'Biff',
-  'Bill', 'Billy', 'Boone', 'Boots', 'Buck', 'Bud', 'Champ',
+  'Antonio', 'Axel', 'Bam', 'Biff',
+  'Bill', 'Billy', 'Boone', 'Boots', 'Buck', 'Bud',
   'Coach', 'Cobb', 'Cousteau', 'Curly', 'Dom', 'Drift', 'Flip',
-  'Frobert', 'Fruity', 'Gen', 'Genji', 'Goose', 'Hambo', 'Hamlet',
-  'Hank', 'Hector', 'Iggly', 'Iggy', 'Inkwell', 'Jay', 'Jitters',
-  'Kevin', 'Kid Cat', 'Kit', 'Kody', 'Leonardo', 'Louie', 'Lyman',
-  'Mac', 'Masa', 'Moose', 'Mott', 'Nindori', 'Peck', 'Pierce',
-  'Pierre', 'Pigleg', 'Poko', 'Poncho', 'Quetzal', 'Ribbot', 'Roald',
-  'Rod', 'Rory', 'Rowan ', 'Rudy', 'Samson', 'Scoot', 'Sheldon',
-  'Shinabiru', 'Sly', 'Snake', 'Sparro', 'Sprocket', 'Sterling', 'Stinky',
-  'Tad', 'Tank', 'Tarou', 'Teddy', 'Tybalt', 'Woolio',
+  'Frobert', 'Genji', 'Goose', 'Hamlet',
+  'Iggly', 'Jay', 'Jitters',
+  'Kevin', 'Kid Cat', 'Kody', 'Leonardo', 'Louie', 'Lyman',
+  'Mac', 'Moose', 'Mott', 'Peck', 'Pierce',
+  'Poncho', 'Ribbot', 'Roald',
+  'Rod', 'Rory', 'Rowan', 'Rudy', 'Samson', 'Scoot', 'Sheldon',
+  'Sly', 'Snake', 'Sparro', 'Sprocket', 'Sterling', 'Stinky',
+  'Tad', 'Tank', 'Tarou', 'Teddy', 'Tybalt'
 ];
 
 let lazyVillagers = [
@@ -38,7 +38,7 @@ let lazyVillagers = [
   'Ozzie', 'Paolo', 'Papi', 'Pironkon', 'Prince', 'Puck', 'Pudge',
   'Punchy', 'Raddle', 'Rex', 'Rodeo', 'Rollo', 'Sherb', 'Simon',
   'Spork', 'Stitches', 'Stu', 'Sven', 'Tucker', 'Wade', 'Walker',
-  'Weber', 'Yodel', 'Zucker',
+  'Weber', 'Yodel', 'Zucker'
 ];
 
 let normalVillagers = [
@@ -52,7 +52,7 @@ let normalVillagers = [
   'Merengue', 'Midge', 'Mitzi', 'Molly', 'Nan', 'Nana', 'Norma',
   'Nosegay', 'Olive', 'Patricia', 'Peaches', 'Pekoe', 'Poppy', 'Rhonda',
   'Sally', 'Sandy', 'Savannah', 'Skye', 'Stella', 'Sunny', 'Sydney',
-  'Sylvana', 'Tia', 'Vesta', 'Viché', 'Zoe',
+  'Sylvana', 'Tia', 'Vesta', 'Viché', 'Zoe'
 ];
 
 let peppyVillagers = [
@@ -65,7 +65,7 @@ let peppyVillagers = [
   'Peanut', 'Peggy', 'Penelope', 'Penny', 'Pinky', 'Piper', 'Pippy',
   'Pompom', 'Puddles', 'Rilla', 'Rio', 'Rosie', 'Ruby', 'Sprinkle',
   'Tabby', 'Tammi', 'Tangy', 'Truffles', 'Tutu', 'Twiggy', 'Victoria',
-  'Wendy', 'Winnie',
+  'Wendy', 'Winnie'
 ];
 
 let smugVillagers = [
@@ -74,7 +74,7 @@ let smugVillagers = [
   'Keaton', 'Ken', 'Kidd', 'Klaus', 'Kyle', 'Leopold', 'Lionel',
   'Lopez', 'Lucha', 'Marshal', 'O\'Hare', 'Olaf', 'Phil', 'Pietro',
   'Quillson', 'Raymond', 'Rodney', 'Shep', 'Tex', 'Toby', 'W. Link',
-  'Zell',
+  'Zell'
 ];
 
 let snootyVillagers = [
@@ -84,17 +84,17 @@ let snootyVillagers = [
   'Freya', 'Friga', 'Gigi', 'Gloria', 'Greta', 'Gwen', 'Jane',
   'Judy', 'Julia', 'Kitty', 'Lulu', 'Madam Rosa', 'Maelle', 'Mallary',
   'Mathilda', 'Mint', 'Miranda', 'Monique', 'Naomi', 'Olivia', 'Opal',
-  'Pancetti', 'Pecan', 'Petunia', 'Petunia', 'Portia', 'Purrl', 'Queenie',
+  'Pancetti', 'Pecan', 'Petunia', 'Portia', 'Purrl', 'Queenie',
   'Rhoda', 'Robin', 'Snooty', 'Soleil', 'Sue E.', 'Tasha', 'Tiara',
   'Tiffany', 'Timbra', 'Tipper', 'Valise', 'Velma', 'Violet', 'Vivian',
-  'Whitney', 'Willow', 'Yuka',
+  'Whitney', 'Willow', 'Yuka'
 ];
 
 let uchiVillagers = [
   'Agnes', 'Canberra', 'Charlise', 'Cherry', 'Deirdre', 'Diva', 'Flo',
   'Frita', 'Fuchsia', 'Hazel', 'Katt', 'Mira', 'Muffy', 'Pashmina',
   'Paula', 'Phoebe', 'Plucky', 'Renee', 'Rocket', 'Reneigh', 'Shari',
-  'Sylvia', 'Tammy', 'Ursala',
+  'Sylvia', 'Tammy', 'Ursala'
 ];
 
 let personalityTypes = [crankyVillagers, jockVillagers, lazyVillagers,
