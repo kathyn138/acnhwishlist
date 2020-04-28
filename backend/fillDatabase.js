@@ -1,29 +1,35 @@
-let uchiVillagers = [
-  'Agnes', 'Canberra', 'Charlise', 'Cherry', 'Deirdre', 'Diva', 'Flo',
-  'Frita', 'Fuchsia', 'Hazel', 'Katt', 'Mira', 'Muffy', 'Pashmina',
-  'Paula', 'Phoebe', 'Plucky', 'Renee', 'Rocket', 'Reneigh', 'Shari',
-  'Sylvia', 'Tammy', 'Ursala',
-];
-
 const db = require("./db");
 const express = require("express");
 const router = new express.Router();
 
+const { crankyVillagers, jockVillagers, lazyVillagers,
+  normalVillagers, peppyVillagers, smugVillagers,
+  snootyVillagers, uchiVillagers } = require('../scripts/villagers');
 
 
-router.post("/wtf", async function (name, image, personality) {
+let personalityTypes = [crankyVillagers, jockVillagers, lazyVillagers,
+  normalVillagers, peppyVillagers, smugVillagers,
+  snootyVillagers, uchiVillagers];
 
-  for (let i = 0; i < uchiVillagers.length; i++) {
-    let name1 = uchiVillagers[i];
-    let image1 = `/villagers/uchi/${name1}.png`;
-    let personality1 = 'Uchi';
-    try {
-      await db.query(`
-        INSERT INTO villagers (name, image, personality)
-        VALUES ($1, $2, $3)`, 
-        [name1, image1, personality1])
-    } catch (err) {
-      return next(err);
+let folderNames = ['Cranky', 'Jock', 'Lazy', 'Normal', 'Peppy', 'Smug',
+  'Snooty', 'Uchi'];
+
+router.post("/wtf", async function () {
+
+  for (let i = 0; i < personalityTypes.length; i++) {
+    for (let j = 0; j < personalityTypes[i].length; j++) {
+      let name = personalityTypes[i][j];
+      let image = `/villagers/${folderNames[i]}/${name}.png`;
+      let personality = folderNames[i];
+
+      try {
+        await db.query(`
+          INSERT INTO villagers (name, image, personality)
+          VALUES ($1, $2, $3)`,
+          [name, image, personality])
+      } catch (err) {
+        return next(err);
+      }
     }
   }
 }
