@@ -3,8 +3,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const wtf = require("./fillDatabase");
 
-// const postsRoutes = require("./routes/posts");
-// const postCommentsRoutes = require("./routes/postComments");
+const villagersRoutes = require("./routes/villagers");
 
 const app = express();
 
@@ -12,7 +11,7 @@ app.use(morgan("tiny"));
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("", wtf);
+app.use("/villagers", villagersRoutes);
 
 // app.use("/api/posts/:post_id/comments", postCommentsRoutes);
 // app.use("/api/posts", postsRoutes);
