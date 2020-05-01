@@ -1,21 +1,16 @@
 const express = require("express");
+const cors = require("cors");
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+// add logging system
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
-const wtf = require("./fillDatabase");
+app.use(morgan("tiny"));
 
 const villagersRoutes = require("./routes/villagers");
 
-const app = express();
-
-app.use(morgan("tiny"));
-app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use("/villagers", villagersRoutes);
-
-// app.use("/api/posts/:post_id/comments", postCommentsRoutes);
-// app.use("/api/posts", postsRoutes);
-
 
 /** 404 Not Found handler. */
 
