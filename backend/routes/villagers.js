@@ -4,89 +4,90 @@ const express = require("express");
 const router = new express.Router();
 const Villager = require("../models/villager");
 
-/** GET /  =>  {crankyVillagers: [villager, villager]}  */
+/** GET /cranky  =>  {villagers: [villager, villager]}  */
 
 router.get("/cranky", async function (req, res, next) {
   try {
-    const crankyVillagers = await Villager.findAllCranky(req.query);
-    return res.json({ crankyVillagers });
+    const villagers = await Villager.findAllCranky();
+    return res.json({ villagers });
   } catch (err) {
     return next(err);
   }
 });
 
-/** GET /  =>  {jockVillagers: [villager, villager]}  */
+/** GET /jock  =>  {villagers: [villager, villager]}  */
 
 router.get("/jock", async function (req, res, next) {
   try {
-    const jockVillagers = await Villager.findAllJock(req.query);
-    return res.json({ jockVillagers });
+    const villagers = await Villager.findAllJock();
+    return res.json({ villagers });
   } catch (err) {
     return next(err);
   }
 });
 
-/** GET /  =>  {lazyVillagers: [villager, villager]}  */
+/** GET /lazy  =>  {villagers: [villager, villager]}  */
 
 router.get("/lazy", async function (req, res, next) {
   try {
-    const lazyVillagers = await Villager.findAllLazy(req.query);
-    return res.json({ lazyVillagers });
+    const villagers = await Villager.findAllLazy();
+    return res.json({ villagers });
   } catch (err) {
     return next(err);
   }
 });
 
-/** GET /  =>  {normalVillagers: [villager, villager]}  */
+/** GET /normal  =>  {villagers: [villager, villager]}  */
 
 router.get("/normal", async function (req, res, next) {
   try {
-    const normalVillagers = await Villager.findAllNormal(req.query);
-    return res.json({ normalVillagers });
+    const villagers = await Villager.findAllNormal();
+    return res.json({ villagers });
   } catch (err) {
     return next(err);
   }
 });
 
-/** GET /  =>  {peppyVillagers: [villager, villager]}  */
+/** GET /peppy  =>  {villagers: [villager, villager]}  */
 
 router.get("/peppy", async function (req, res, next) {
   try {
-    const peppyVillagers = await Villager.findAllPeppy(req.query);
-    return res.json({ peppyVillagers });
+    const villagers = await Villager.findAllPeppy();
+    return res.json({ villagers });
   } catch (err) {
     return next(err);
   }
 });
 
-/** GET /  =>  {smugVillagers: [villager, villager]}  */
+/** GET /smug  =>  {villagers: [villager, villager]}  */
 
 router.get("/smug", async function (req, res, next) {
   try {
-    const smugVillagers = await Villager.findAllSmug(req.query);
-    return res.json({ smugVillagers });
+    const vllagers = await Villager.findAllSmug();
+    return res.json({ villagers });
   } catch (err) {
     return next(err);
   }
 });
 
-/** GET /  =>  {snootyVillagers: [villager, villager]}  */
+/** GET /snooty  =>  {villagers: [villager, villager]}  */
 
 router.get("/snooty", async function (req, res, next) {
   try {
-    const snootyVillagers = await Villager.findAllSnooty(req.query);
-    return res.json({ snootyVillagers });
+    const villagers = await Villager.findAllSnooty();
+    return res.json({ villagers });
   } catch (err) {
     return next(err);
   }
 });
 
-/** GET /  =>  {uchiVillagers: [villager, villager]}  */
+/** GET /uchi  =>  {villagers: [villager, villager]}  */
 
 router.get("/uchi", async function (req, res, next) {
   try {
-    const uchiVillagers = await Villager.findAllUchi(req.query);
-    return res.json({ uchiVillagers });
+    const villagers = await Villager.findAllUchi();
+    console.log('help', req.params)
+    return res.json({ villagers });
   } catch (err) {
     return next(err);
   }
@@ -94,11 +95,11 @@ router.get("/uchi", async function (req, res, next) {
 
 /** 
  * route for searching by villager name
- * GET /[name]  =>  {villager: villager} */
+ * GET ?name=villager  =>  {villager: villager} */
 
-router.get("/:name", async function (req, res, next) {
+router.get("/", async function (req, res, next) {
   try {
-    const villager = await Villager.findOne(req.params.name);
+    const villager = await Villager.findOne(req.query.name);
     return res.json({ villager });
   } catch (err) {
     return next(err);
