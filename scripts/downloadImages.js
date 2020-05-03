@@ -1,8 +1,6 @@
 const fs = require('fs');
 const https = require('https');
 
-// https://stackoverflow.com/questions/11944932/how-to-download-a-file-with-node-js-without-using-third-party-libraries
-
 let download = function(url, dest, cb) {
   let file = fs.createWriteStream(dest);
   let request = https.get(url, function(response) {
@@ -11,7 +9,7 @@ let download = function(url, dest, cb) {
       file.close(cb); 
     });
   }).on('error', function(err) { // Handle errors
-    fs.unlink(dest); // Delete the file async. (But we don't check the result)
+    fs.unlink(dest); // removes the file
     if (cb) cb(err.message);
   });
 };
@@ -20,12 +18,13 @@ fs.readFile('imageUrls.txt', 'utf8', function (err, data) {
   if (err) {
     // handle possible error
     console.error(err);
-    // kill the process and tell the shell it errored
     process.exit(1);
   }
-  // otherwise success
 
   let dataList = data.toString().split(',');
+
+  // go through imagesUrls.txt
+  // and search for specific phrases to remove from file name
 
   for (let i = 0; i < dataList.length; i++) {
     let currFile = dataList[i].split('/');
@@ -33,7 +32,7 @@ fs.readFile('imageUrls.txt', 'utf8', function (err, data) {
     let newFileName = '';
 
     // removing extensions to original file name
-    // left = in case of future events changes file names from site
+    
     if (currFileName.indexOf('_NewHorizon') >= 0) {
       newFileName = currFileName.replace('_NewHorizon', ''); 
     } else if (currFileName.indexOf('_ACNH') >= 0) {
@@ -49,7 +48,6 @@ fs.readFile('imageUrls.txt', 'utf8', function (err, data) {
 });
 
 console.log('reading file');
-// file won't have been read yet at this point
 
 // note that there are a few new villagers whose original file names
 // follow convention of new_animalspecies 

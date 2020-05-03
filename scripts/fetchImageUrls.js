@@ -3,6 +3,10 @@ const util = require('util')
 const fs = require('fs');
 let content = ''
 
+// all images that we want have commanlities in their url: 
+// 1) https://oyster
+// 2) animal-crossing-new-horizons
+// 3) ends in .jpg, .gif, or .png
 
 axios.get('https://www.ign.com/wikis/animal-crossing-new-horizons/Villagers_and_Other_Characters').then(function(resp) {
   let pattern = /https:\/\/oyster.+?\/animal-crossing-new-horizons\/.+?\.(?:jpg|gif|png)/g;
@@ -17,5 +21,5 @@ axios.get('https://www.ign.com/wikis/animal-crossing-new-horizons/Villagers_and_
     console.log('Successfully wrote to file!');
   });
 
-  console.log('writing file...');
+  console.log('Writing file...');
 });

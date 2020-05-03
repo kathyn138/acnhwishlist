@@ -19,16 +19,46 @@ let folderNames = ['cranky', 'jock', 'lazy', 'normal', 'peppy', 'smug',
 
 let mismatches = {};
 
+function findDuplicates() {
+  let villagers = {};
+
+  // add all villagers into a count dictionary
+  // return villagers whose name appears more than once
+
+  for (let i = 0; i < personalityTypes.length; i++) {
+    for (let j = 0; j < personalityTypes[i].length; j++) {
+      if (!villagers[personalityTypes[i][j]]) {
+        villagers[personalityTypes[i][j]] = 1;
+      } else {
+        villagers[personalityTypes[i][j]]++;
+      }
+    }
+  }
+
+  let duplicates = [];
+
+  for (let key in villagers) {
+    if (villagers[key] > 1) {
+      duplicates.push(key);
+    }
+  }
+
+  return duplicates;
+}
+
 function findMismatch() {
   for (let i = 0; i < personalityTypes.length; i++) {
-    let testFolder = `./frontend/src/assets/villagers/${folderNames[i]}`;
+    let currFolder = `../frontend/src/assets/villagers/${folderNames[i]}`;
     let files = [];
 
-    fs.readdirSync(testFolder).forEach(file => {
+    fs.readdirSync(currFolder).forEach(file => {
       files.push(file.slice(0, -4));
     });
 
     let currSubset = [];
+
+    // compare files in current folders to 
+    // names in villager master list 
 
     for (let j = 0; j < personalityTypes[i].length; j++) {
       let currVillager = files.find(villager => villager === personalityTypes[i][j]);
@@ -44,5 +74,6 @@ function findMismatch() {
 }
 
 console.log(findMismatch())
+console.log('duplicates: ', findDuplicates())
 
 
