@@ -1,21 +1,15 @@
 import React from 'react';
+import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
-import SearchBar from './SearchBar';
-import VillagerList from './VillagerList';
 import Wishlist from './Wishlist';
-import wishlistApi from './wishlistApi';
+import NavBar from './NavBar';
+import Routes from './Routes';
 
 type appState = {
-  villagers: {
-    id: string, 
-    name: string, 
-    image: string, 
-    personality: string
-  }[], 
   wishlist: {
-    id: string, 
-    name: string, 
-    image: string, 
+    id: string,
+    name: string,
+    image: string,
     personality: string
   }[];
 }
@@ -23,29 +17,55 @@ class App extends React.PureComponent<{}, appState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      villagers: [],
       wishlist: []
     };
-    this.searchVillagers = this.searchVillagers.bind(this);
+    this.addToWishlist = this.addToWishlist.bind(this);
+    this.removeFromWishlist = this.removeFromWishlist.bind(this);
+    this.checkWishlist = this.checkWishlist.bind(this);
   }
 
-  async searchVillagers(query: string) {
-    let result = await wishlistApi.searchVillagers(query);
-    this.setState({ villagers: result });
+  addToWishlist(villager: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }) {
+    this.setState({ wishlist: [...this.state.wishlist, villager] });
+  }
+
+  removeFromWishlist(villager: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }) {
+    this.setState({ wishlist: this.state.wishlist.filter(v => v.name !== villager.name)});
+  }
+
+  checkWishlist(name: string) {
+    if (this.state.wishlist.filter(villager => villager.name === name).length === 1) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   render() {
     return (
       <div className="App container-fluid">
-        <div className="row">
-          <div className="middle-section col-7">
-            <SearchBar search={this.searchVillagers} />
-            <VillagerList />
+        <BrowserRouter>
+          <Route path="/" render={rtProps => <NavBar {...rtProps}
+          />} />
+          <div className="row">
+            <Routes addToWishlist={this.addToWishlist}
+              checkWishlist={this.checkWishlist} 
+              removeFromWishlist={this.removeFromWishlist} />
+            <div className="col-md-5">
+              <Wishlist wishlist={this.state.wishlist} 
+              removeFromWishlist={this.removeFromWishlist}/>
+            </div>
           </div>
-          <div className="col-5">
-          <Wishlist />
-          </div>
-        </div>
+        </BrowserRouter>
       </div>
     );
   }
