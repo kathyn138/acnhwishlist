@@ -7,7 +7,7 @@ It is currently a work in progress.
 
 Users can browse for their favorite villagers and create a wish list for villagers they would love to have in their town. 
 
-![Mockup of Cranky Page](frontend/src/assets/crankymockup.png "Mockup of Cranky Page")
+![Mockup of Cranky Page](frontend/src/assets/cranky-demo.png "Screenshot of Cranky Demo")
 
 ## To Do 
 - [x] Create database of villagers 
