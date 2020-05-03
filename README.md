@@ -17,5 +17,20 @@ Users can browse for their favorite villagers and create a wish list for village
 - [ ] Test routes and search functionality 
 - [ ] Incorporate acknowledgements/further links section 
 
+## Component Hierarchy 
+```
+App
+├── NavBar
+├──┬ Routes
+│  ├─┬ Home
+│  │ ├── SearchBar  
+│  │ └── VillagerCard 
+│  └─┬ VillagerList
+│    ├── SearchBar  
+│    └── VillagerCard
+└─┬ Wishlist
+  └── WishlistCard
+```
+
 ## Future Implementations
 - Export wish list feature 
