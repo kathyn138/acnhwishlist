@@ -1,0 +1,19 @@
+.card {
+    background-color: rgba(255, 250, 228, 0);
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(131, 116, 87, 0.5);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 98%;
+}
+.card-img {
+    height: 100px;
+    width: auto;
+}
+.fa-heart {
+    font-size: 20px;
+}
+.filled-in-heart {
+    color: #FF3366
+}

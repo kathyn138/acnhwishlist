@@ -1,18 +1,28 @@
 .App {
-  background: url('./assets/biggerbg.jpeg') no-repeat bottom right fixed;
+  /* background: url('./assets/biggerbg.jpeg') no-repeat bottom right fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
   /* padding: 0px; */
-  height: 100vh;
+  height: 90vh;
   /* /// is this necessary? bc doesnt bootstrap do this? idk */
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column */
 }
 .middle-section {
 	/* position: relative; */
-	left: 50px;
+	/* left: 50px; */
 	/* width: 20%; */
-	/* height: 300px; */
+  /* height: 300px; */
+  /* background-color: red; */
 }
+/* .wtf {
+  background-color: black;
+}
+.col-md-5 {
+  background-color: blue;
+}
+.col-7 {
+  background-color: orange
+} */
