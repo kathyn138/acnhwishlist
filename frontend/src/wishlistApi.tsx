@@ -13,22 +13,18 @@ class wishlistApi {
       })).data;
     } catch (error) {
       console.error("API Error:", error);
+      let message = error.response.data.message;
+      throw Array.isArray(message) ? message : [message];
     }
   }
+
   static async getVillagers(personality: string) {
-    let res = await axios.get(`${BASE_URL}/villagers/${personality}`);
-    return res.data;
+    let res = await this.request(`villagers/${personality}`);
+    return res.villagers;
   }
 
   static async searchVillagers(query: string) {
-    let res;
-
-    if (query) {
-      res = await this.request(`villagers`, { name: query });
-    } else {
-      res = await this.request(`${BASE_URL}/villagers`);
-    }
-    
+    let res = await this.request(`villagers`, { name: query });
     return res.villager;
   }
 }
