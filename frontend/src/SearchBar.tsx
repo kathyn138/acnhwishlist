@@ -1,6 +1,5 @@
 import React from 'react';
 import './SearchBar.css';
-import wishlistApi from './wishlistApi';
 
 type SearchBarProps = {
   search: (query: string) => void;
@@ -34,9 +33,11 @@ class SearchBar extends React.PureComponent<SearchBarProps, SearchBarState> {
   render() {
     return (
       <form className="form-inline my-5" onSubmit={this.handleSubmit}>
-        <input className="form-control col-7" id="search-input" type="search" placeholder="Search for your favorite villager!"
-          aria-label="Search" name="query" value={this.state.query} onChange={this.handleChange}
-         />
+        <input className="form-control col-7" id="search-input" type="search"
+          placeholder="Search for your favorite villager!"
+          aria-label="Search" name="query" value={this.state.query}
+          onChange={this.handleChange}
+        />
       </form>
     );
   }
