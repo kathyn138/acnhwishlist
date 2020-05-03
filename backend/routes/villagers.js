@@ -86,7 +86,6 @@ router.get("/snooty", async function (req, res, next) {
 router.get("/uchi", async function (req, res, next) {
   try {
     const villagers = await Villager.findAllUchi();
-    console.log('help', req.params)
     return res.json({ villagers });
   } catch (err) {
     return next(err);
