@@ -37,3 +37,7 @@
   border-radius: 10px;
   background-color: #B7AC85;
 }
+.wl-header {
+	text-align: center;
+	margin-bottom: 10px;
+}

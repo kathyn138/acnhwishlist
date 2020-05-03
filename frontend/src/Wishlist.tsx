@@ -22,6 +22,9 @@ class Wishlist extends React.PureComponent<WishlistProps> {
     return (
       <div className="wl-top">
         <div className="wl-data">
+          <div className="wl-header">
+            <h3>Wishlist</h3>
+          </div>
           {this.props.wishlist.map(v =>
             <WishlistCard villager={v} removeFromWishlist={this.props.removeFromWishlist} />)}
         </div>
