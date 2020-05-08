@@ -106,10 +106,11 @@ class Villager {
     const villagerRes = await db.query(
       `SELECT id, name, image, personality
             FROM villagers
-            WHERE name = $1`,
-      [name]);
+            WHERE UPPER(name) LIKE UPPER($1)
+            ORDER BY name`,
+      [name + '%']);
 
-    const villager = villagerRes.rows[0];
+    const villager = villagerRes.rows;
 
     if (!villager) {
       const error = new Error(`There exists no villager '${name}'`);
