@@ -1,4 +1,4 @@
-/** Database connection for Microblog. */
+/** Database connection for Villager Wishlist. */
 
 const { Client } = require("pg");
 
