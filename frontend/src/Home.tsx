@@ -41,7 +41,7 @@ class Home extends React.PureComponent<HomeProps, HomeState> {
 
   async searchVillagers(query: string) {
     let result = await wishlistApi.searchVillagers(query);
-    this.setState({ villagers: [result] });
+    this.setState({ villagers: result });
   }
 
   render() {

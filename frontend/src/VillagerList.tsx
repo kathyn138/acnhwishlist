@@ -58,7 +58,7 @@ class VillagerList extends React.PureComponent<VillagerListProps, VillagerListSt
 
   async searchVillagers(query: string) {
     let result = await wishlistApi.searchVillagers(query);
-    this.setState({ villagers: [result], searching: true });
+    this.setState({ villagers: result, searching: true });
   }
 
   render() {

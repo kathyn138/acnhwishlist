@@ -1,5 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
+import debounce from 'lodash/debounce';
 
 type SearchBarProps = {
   search: (query: string) => void;
@@ -10,6 +11,7 @@ type SearchBarState = {
 };
 
 class SearchBar extends React.PureComponent<SearchBarProps, SearchBarState> {
+  private liveSearch: () => void;
   constructor(props: SearchBarProps) {
     super(props);
     this.state = {
@@ -17,12 +19,14 @@ class SearchBar extends React.PureComponent<SearchBarProps, SearchBarState> {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.liveSearch = debounce(() => this.props.search(this.state.query), 300);
   }
 
   handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       [evt.target.name]: evt.target.value
     } as SearchBarState);
+    this.liveSearch();
   }
 
   handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
