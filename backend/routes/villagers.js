@@ -63,7 +63,7 @@ router.get("/peppy", async function (req, res, next) {
 
 router.get("/smug", async function (req, res, next) {
   try {
-    const vllagers = await Villager.findAllSmug();
+    const villagers = await Villager.findAllSmug();
     return res.json({ villagers });
   } catch (err) {
     return next(err);
