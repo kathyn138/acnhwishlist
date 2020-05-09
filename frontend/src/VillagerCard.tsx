@@ -1,6 +1,6 @@
 import React from 'react';
 import './VillagerCard.css';
-import test from './assets/villagers/cranky/admiral.png';
+import test from './assets/welcome-isabelle.png';
 
 type VillagerCardProps = {
   villager: {
