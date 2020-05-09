@@ -62,7 +62,7 @@ class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardSt
   }
 
   render() {
-    let { name, image } = this.props.villager;
+    let { name } = this.props.villager;
     let heart = this.state.onWishlist ? <i className="fas fa-heart filled-in-heart"
       onClick={() => this.handleRemove(this.props.villager)}
     ></i>
