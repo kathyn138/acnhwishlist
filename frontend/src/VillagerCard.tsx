@@ -1,6 +1,5 @@
 import React from 'react';
 import './VillagerCard.css';
-import test from './assets/welcome-isabelle.png';
 
 type VillagerCardProps = {
   villager: {
@@ -62,7 +61,7 @@ class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardSt
   }
 
   render() {
-    let { name } = this.props.villager;
+    let { name, personality } = this.props.villager;
     let heart = this.state.onWishlist ? <i className="fas fa-heart filled-in-heart"
       onClick={() => this.handleRemove(this.props.villager)}
     ></i>
@@ -74,7 +73,7 @@ class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardSt
       <div className="card my-auto">
         <div className="row no-gutters">
           <div className="col-lg-2 d-flex align-items-center justify-content-center">
-            <img src={test} className="card-img" alt={`${name}`} />
+            <img src={`https://github.com/kathyn262/acnhwishlist/blob/master/frontend/src/assets/villagers/${personality.toLowerCase()}/${name}.png?raw=true`} className="card-img" alt={`${name}`} />
           </div>
           <div className="col-lg-8 my-auto">
             <div className="card-body text-center">
