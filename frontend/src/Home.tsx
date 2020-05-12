@@ -46,7 +46,7 @@ class Home extends React.PureComponent<HomeProps, HomeState> {
 
   render() {
     let welcomePage = <React.Fragment>
-      <img className="welcome-isabelle" src="https://cdn.discordapp.com/attachments/709246246359138316/709246283617009724/welcome-isabelle.png" alt=""></img>
+      <img className="welcome-isabelle" src={welcomeIsabelle} alt=""></img>
       <p>
         Search for your favorite villager or
         click on any of the personality categories to get started!
