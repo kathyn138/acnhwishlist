@@ -26,12 +26,12 @@ class WishlistCard extends React.PureComponent<WishlistCardProps> {
   }
 
   render() {
-    let { name, personality } = this.props.villager;
+    let { name, personality, image } = this.props.villager;
     return (
       <div className="card my-auto">
         <div className="row no-gutters">
           <div className="col-lg-4 d-flex align-items-center justify-content-center">
-            <img src={`https://github.com/kathyn262/acnhwishlist/blob/master/frontend/src/assets/villagers/${personality.toLowerCase()}/${name}.png?raw=true`} className="card-img" alt={`${name}`} />
+            <img src={image} className="card-img" alt={`${name}`} />
           </div>
           <div className="col-lg-7 my-auto">
             <div className="card-body text-center">
