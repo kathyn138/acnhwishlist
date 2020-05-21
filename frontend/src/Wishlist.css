@@ -1,23 +1,23 @@
-.wl-top {
+.wl {
 	position: relative;
-	width: 29vw;
-    height: 18vw;
+	width: 70%;
+    height: 80%;
     top: 10%;
-	border-radius: 50%;
 	background: #FFFAE4;
 	margin: 0 auto;
+	border-radius: .25rem;
 }
 .wl-data {
-	position: absolute;
+	/* position: absolute;
 	overflow: auto;
 	height: 88%;
-	width: 75%;
-	top: 18%;
+	width: 75%; */
+	/* top: 18%;
 	left: 14%;
-	z-index: 1;
+	z-index: 1; */
 	color: #837457;
 }
-.wl-bot {
+/* .wl-bot {
 	position: relative;
 	width: 25vw;
 	height: 9vw;
@@ -25,7 +25,7 @@
 	left: 7%;
 	border-radius: 50%;
 	background: #FFFAE4;
-}
+} */
 .wl-data::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: #D4CFB4;

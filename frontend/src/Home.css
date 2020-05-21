@@ -1,22 +1,29 @@
-.home-top {
+/* .home-top {
 	position: relative;
 	width: 48vw;
 	height: 27vw;
 	border-radius: 50%;
 	background: #FFFAE4;
 	margin: 0 auto;
-}
-.home-data {
-	position: absolute;
+} */
+.home {
+	position: relative;
+	height: 70%;
 	overflow: auto;
 	height: 97%;
 	width: 72%;
-	top: 16%;
+	/* top: 16%; */
 	left: 15%;
 	z-index: 1;
+	background: #FFFAE4;
 	color: #837457;
+	border-radius: .25rem;
 }
-.home-bot {
+.home-data {
+	margin: 0 auto;
+	width: 90%;
+}
+/* .home-bot {
 	position: absolute;
 	height: 15vw;
 	width: 43vw;
@@ -24,13 +31,13 @@
 	left: 5%;
 	border-radius: 50%;
 	background: #FFFAE4;
-}
+} */
 .home-data::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: #D4CFB4;
 }
 .home-data::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 .home-data::-webkit-scrollbar-thumb {
   border-radius: 10px;
@@ -38,6 +45,10 @@
 }
 .welcome-isabelle {
     height: 200px; 
-    width: auto;
+	width: auto;
+	margin-top: 30px;
     margin-bottom: 30px;
+}
+.home-message {
+	text-align: center;
 }

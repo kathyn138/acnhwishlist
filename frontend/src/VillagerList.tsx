@@ -72,16 +72,15 @@ class VillagerList extends React.PureComponent<VillagerListProps, VillagerListSt
     return (
       <div className="middle-section col-md-7">
         <SearchBar search={this.searchVillagers} />
-        <div className="vl-top">
+        <div className="vl">
           <div className="vl-data">
             <div className="vl-header">
               {header}
             </div>
             {villagers}
           </div>
-          <div className="vl-bot"></div>
         </div>
-      </div>
+      // </div>
     );
   }
 }

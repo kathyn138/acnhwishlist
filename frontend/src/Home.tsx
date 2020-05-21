@@ -46,7 +46,7 @@ class Home extends React.PureComponent<HomeProps, HomeState> {
   render() {
     let welcomePage = <React.Fragment>
       <img className="welcome-isabelle" src="https://cdn.discordapp.com/attachments/709246246359138316/709246283617009724/welcome-isabelle.png" alt=""></img>
-      <p>
+      <p className="home-message">
         Search for your favorite villager or
         click on any of the personality categories to get started!
       </p>
@@ -64,11 +64,11 @@ class Home extends React.PureComponent<HomeProps, HomeState> {
     return (
       <div className="middle-section col-md-7 text-center">
         <SearchBar search={this.searchVillagers} />
-        <div className="home-top">
+        <div className="home">
           <div className="home-data">
             {data}
           </div>
-          <div className="home-bot"></div>
+          {/* <div className="home-bot"></div> */}
         </div>
       </div>
     );
