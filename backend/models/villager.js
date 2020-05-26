@@ -120,6 +120,21 @@ class Villager {
 
     return villager;
   }
+
+  /** Filter by personality and species */
+
+  static async filter(personalities, species) {
+    let filteredPersonalities = personalities.map(p => '$' + p);
+    let filteredspecies = species.map(s => '$' + s);
+    const filteredRes = await db.query(
+      `SELECT id, name, image, personality
+      FROM villagers
+      WHERE personalities IN (${filteredPersonalities.join(',')})
+      AND 
+      species IN (${filteredspecies.join(',')})`);
+
+    return filteredRes.rows;
+  }
 }
 
 
