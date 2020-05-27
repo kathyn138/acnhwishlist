@@ -105,4 +105,14 @@ router.get("/", async function (req, res, next) {
   }
 });
 
+router.get("/filter", async function (req, res, next) {
+  try {
+    const villagers = await Villager.filter(req.query.personalities, 
+      req.query.species);
+    return res.json({ villagers });
+  } catch (err) {
+    return next(err);
+  }
+});
+
 module.exports = router;
