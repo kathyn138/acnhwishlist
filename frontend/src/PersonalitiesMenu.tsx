@@ -36,7 +36,8 @@ class PersonalitiesMenu extends React.PureComponent<{}, PersonalitiesMenuState> 
             onClick={this.handleClick}>
             Personalities
         </button>
-
+        
+        {/* refactor if possible to keep code dry */}
           <div className={`dropdown-menu ${show} personalities`} aria-labelledby="dropdownMenu2">
             <div className="dropdown-content">
               <div className="row">

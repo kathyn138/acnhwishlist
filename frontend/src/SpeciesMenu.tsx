@@ -42,6 +42,7 @@ class SpeciesMenu extends React.PureComponent<{}, SpeciesMenuState> {
             Species
           </button>
 
+          {/* refactor if possible to keep code dry */}
           <div className={`dropdown-menu ${show} species`} aria-labelledby="dropdownMenu2">
             <div className="dropdown-content">
               <div className="row">
