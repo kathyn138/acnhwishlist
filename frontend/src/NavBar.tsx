@@ -8,8 +8,8 @@ import SpeciesMenu from './SpeciesMenu';
 
 type NavBarState = {
   menu: string,
-  personalities: boolean,
-  species: boolean,
+  openPersonalities: boolean,
+  openSpecies: boolean,
   selectedPersonalities: string[],
   selectedSpecies: string[]
 }
@@ -18,13 +18,14 @@ class NavBar extends React.PureComponent<{}, NavBarState> {
     super(props);
     this.state = {
       menu: '',
-      personalities: false,
-      species: false,
+      openPersonalities: false,
+      openSpecies: false,
       selectedPersonalities: [],
       selectedSpecies: []
     };
     // this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   // handleClick(evt: MouseEvent<HTMLButtonElement>) {
@@ -35,6 +36,33 @@ class NavBar extends React.PureComponent<{}, NavBarState> {
   //   }
   // }
 
+  handleToggle(menu: string, toggle: string) {
+    // need to make sure other menu isn't already open
+    // before opening menu user clicks on 
+
+    // see if it's possible to refactor this 
+    if (menu === 'personalities') {
+      if (!this.state.openSpecies) {
+        if (toggle === 'open') {
+          this.setState({ openPersonalities: true });
+        } else {
+          this.setState({ openPersonalities: false });
+        }
+      } else {
+        this.setState({ openPersonalities: true, openSpecies: false });
+      }
+    } else {
+      if (!this.state.openPersonalities) {
+        if (toggle === 'open') {
+          this.setState({ openSpecies: true });
+        } else {
+          this.setState({ openSpecies: false });
+        }
+      } else {
+        this.setState({ openPersonalities: false, openSpecies: true });
+      }
+    }
+  }
   async handleSubmit(evt: React.FormEvent<HTMLButtonElement>) {
     evt.preventDefault();
     let result = await wishlistApi.filterVillagers(
@@ -47,9 +75,9 @@ class NavBar extends React.PureComponent<{}, NavBarState> {
     return (
       <React.Fragment>
         <div className="row">
-        <PersonalitiesMenu />
+          <PersonalitiesMenu handleToggle={this.handleToggle} openPersonalities={this.state.openPersonalities} />
 
-        <SpeciesMenu />
+          <SpeciesMenu handleToggle={this.handleToggle} openSpecies={this.state.openSpecies} />
         </div>
       </React.Fragment>
 

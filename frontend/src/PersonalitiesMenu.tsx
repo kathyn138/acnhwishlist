@@ -2,13 +2,18 @@ import React from 'react';
 import { MouseEvent } from 'react';
 import NavBarLink from './NavBarLink'
 
+type PersonalitiesMenuProps = {
+  handleToggle: (menu: string, toggle: string) => void,
+  openPersonalities: boolean
+}
+
 type PersonalitiesMenuState = {
   personalities: string[],
   menu: string
 }
 
-class PersonalitiesMenu extends React.PureComponent<{}, PersonalitiesMenuState> {
-  constructor(props: {}) {
+class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, PersonalitiesMenuState> {
+  constructor(props: PersonalitiesMenuProps) {
     super(props);
     this.state = {
       personalities: ['Cranky', 'Jock', 'Lazy', 'Normal', 'Peppy', 'Smug',
@@ -19,15 +24,17 @@ class PersonalitiesMenu extends React.PureComponent<{}, PersonalitiesMenuState> 
   }
 
   handleClick(evt: MouseEvent<HTMLButtonElement>) {
-    if (this.state.menu === 'show') {
-      this.setState({ menu: '' });
-    } else {
+    if (this.state.menu === '') {
       this.setState({ menu: 'show' });
+      this.props.handleToggle('personalities', 'open');
+    } else {
+      this.setState({ menu: ''});
+      this.props.handleToggle('personalities', 'closed');
     }
   }
 
   render() {
-    let show = this.state.menu;
+    let show = this.props.openPersonalities ? 'show' : '';
     return (
       <div className="navbar">
         <div className="dropdown">

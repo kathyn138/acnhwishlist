@@ -2,13 +2,19 @@ import React from 'react';
 import { MouseEvent } from 'react';
 import NavBarLink from './NavBarLink'
 
+
+type SpeciesMenuProps = {
+  handleToggle: (menu: string, toggle: string) => void,
+  openSpecies: boolean
+}
+
 type SpeciesMenuState = {
   species: string[],
   menu: string
 }
 
-class SpeciesMenu extends React.PureComponent<{}, SpeciesMenuState> {
-  constructor(props: {}) {
+class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState> {
+  constructor(props: SpeciesMenuProps) {
     super(props);
     this.state = {
       species: ['Alligator', 'Anteater', 'Bear', 'Bird', 'Bull', 'Cat',
@@ -23,15 +29,17 @@ class SpeciesMenu extends React.PureComponent<{}, SpeciesMenuState> {
   }
 
   handleClick(evt: MouseEvent<HTMLButtonElement>) {
-    if (this.state.menu === 'show') {
-      this.setState({ menu: '' });
-    } else {
+    if (this.state.menu === '') {
       this.setState({ menu: 'show' });
+      this.props.handleToggle('species', 'open');
+    } else {
+      this.setState({ menu: '' });
+      this.props.handleToggle('species', 'closed');
     }
   }
 
   render() {
-    let show = this.state.menu;
+    let show = this.props.openSpecies ? 'show' : '';
 
     return (
       <div className="navbar">
