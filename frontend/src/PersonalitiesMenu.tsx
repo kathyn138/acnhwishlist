@@ -3,8 +3,10 @@ import { MouseEvent } from 'react';
 import NavBarLink from './NavBarLink'
 
 type PersonalitiesMenuProps = {
+  openPersonalities: boolean,
   handleToggle: (menu: string, toggle: string) => void,
-  openPersonalities: boolean
+  addPersonality: (personality: string) => void,
+  removePersonality: (personality: string) => void
 }
 
 type PersonalitiesMenuState = {
@@ -17,8 +19,8 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
     super(props);
     this.state = {
       personalities: ['Cranky', 'Jock', 'Lazy', 'Normal', 'Peppy', 'Smug',
-        'Snooty', 'Uchi'], 
-        menu: ''
+        'Snooty', 'Uchi'],
+      menu: ''
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -28,7 +30,7 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
       this.setState({ menu: 'show' });
       this.props.handleToggle('personalities', 'open');
     } else {
-      this.setState({ menu: ''});
+      this.setState({ menu: '' });
       this.props.handleToggle('personalities', 'closed');
     }
   }
@@ -43,22 +45,30 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
             onClick={this.handleClick}>
             Personalities
         </button>
-        
-        {/* refactor if possible to keep code dry */}
+
+          {/* refactor if possible to keep code dry */}
           <div className={`dropdown-menu ${show} personalities`} aria-labelledby="dropdownMenu2">
             <div className="dropdown-content">
               <div className="row">
                 <div className="col-sm-3">
-                  {this.state.personalities.slice(0, 2).map(p => <NavBarLink item={p} />)}
+                  {this.state.personalities.slice(0, 2).map(p => <NavBarLink item={p}
+                    add={this.props.addPersonality}
+                    remove={this.props.removePersonality} />)}
                 </div>
                 <div className="col-sm-3">
-                  {this.state.personalities.slice(2, 4).map(p => <NavBarLink item={p} />)}
+                  {this.state.personalities.slice(2, 4).map(p => <NavBarLink item={p}
+                    add={this.props.addPersonality}
+                    remove={this.props.removePersonality} />)}
                 </div>
                 <div className="col-sm-3">
-                  {this.state.personalities.slice(4, 6).map(p => <NavBarLink item={p} />)}
+                  {this.state.personalities.slice(4, 6).map(p => <NavBarLink item={p}
+                    add={this.props.addPersonality}
+                    remove={this.props.removePersonality} />)}
                 </div>
                 <div className="col-sm-3">
-                  <NavBarLink item={this.state.personalities[6]} />
+                  <NavBarLink item={this.state.personalities[6]}
+                    add={this.props.addPersonality}
+                    remove={this.props.removePersonality} />
                 </div>
               </div>
             </div>

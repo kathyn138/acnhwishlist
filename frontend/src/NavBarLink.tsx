@@ -1,22 +1,42 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { MouseEvent } from 'react';
-import wishlistApi from './wishlistApi';
+import './NavBarLink.css';
 
 type NavBarLinkProps = {
-  item: string
+  item: string,
+  add: (type: string) => void,
+  remove: (type: string) => void
 }
 
-class NavBarLink extends React.PureComponent<NavBarLinkProps> {
+type NavBarLinkState = {
+  selected: boolean
+}
+
+class NavBarLink extends React.PureComponent<NavBarLinkProps, NavBarLinkState> {
   constructor(props: NavBarLinkProps) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      selected: false
+    };
+    this.onClick = this.onClick.bind(this);
+    // this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onClick(type: string) {
+    if (!this.state.selected) {
+      this.props.add(this.props.item);
+      this.setState({ selected: true });
+    } else {
+      this.props.remove(this.props.item);
+      this.setState({ selected: false });
+    }
   }
 
   render() {
+    let color = this.state.selected ? 'selected' : '';
+
     return (
-        <li><a href="#">{this.props.item}</a></li>
+      <li><a href="#" className={color}
+        onClick={() => this.onClick(this.props.item)} >{this.props.item}</a></li>
     );
   }
 }
