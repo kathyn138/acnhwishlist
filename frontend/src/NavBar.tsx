@@ -96,7 +96,7 @@ class NavBar extends React.PureComponent<{}, NavBarState> {
   render() {
     return (
       <React.Fragment>
-        <div className="row">
+        <div className="row justify-content-center navbar">
           <PersonalitiesMenu  openPersonalities={this.state.openPersonalities}
           handleToggle={this.handleToggle}
           addPersonality={this.addPersonality} 

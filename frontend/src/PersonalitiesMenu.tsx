@@ -1,6 +1,7 @@
 import React from 'react';
 import { MouseEvent } from 'react';
-import NavBarLink from './NavBarLink'
+import NavBarLink from './NavBarLink'; 
+import './PersonalitiesMenu.css';
 
 type PersonalitiesMenuProps = {
   openPersonalities: boolean,
@@ -73,7 +74,7 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary" >Submit</button>
+            <button type="button" className="btn btn-primary float-right" >Submit</button>
           </div>
         </div>
       </div>

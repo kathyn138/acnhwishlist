@@ -1,6 +1,7 @@
 import React from 'react';
 import { MouseEvent } from 'react';
-import NavBarLink from './NavBarLink'
+import NavBarLink from './NavBarLink';
+import './SpeciesMenu.css';
 
 
 type SpeciesMenuProps = {
@@ -57,44 +58,29 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
             <div className="dropdown-content">
               <div className="row">
                 <div className="col">
-                  {this.state.species.slice(0, 5).map(p => <NavBarLink item={p}
+                  {this.state.species.slice(0, 9).map(p => <NavBarLink item={p}
                     add={this.props.addSpecies}
                     remove={this.props.removeSpecies} />)}
                 </div>
                 <div className="col">
-                  {this.state.species.slice(5, 10).map(p => <NavBarLink item={p}
+                  {this.state.species.slice(9, 18).map(p => <NavBarLink item={p}
                     add={this.props.addSpecies}
                     remove={this.props.removeSpecies} />)}
                 </div>
                 <div className="col">
-                  {this.state.species.slice(10, 15).map(p => <NavBarLink item={p}
+                  {this.state.species.slice(18, 27).map(p => <NavBarLink item={p}
                     add={this.props.addSpecies}
                     remove={this.props.removeSpecies} />)}
                 </div>
                 <div className="col">
-                  {this.state.species.slice(15, 20).map(p => <NavBarLink item={p}
-                    add={this.props.addSpecies}
-                    remove={this.props.removeSpecies} />)}
-                </div>
-                <div className="col">
-                  {this.state.species.slice(20, 25).map(p => <NavBarLink item={p}
-                    add={this.props.addSpecies}
-                    remove={this.props.removeSpecies} />)}
-                </div>
-                <div className="col">
-                  {this.state.species.slice(25, 30).map(p => <NavBarLink item={p}
-                    add={this.props.addSpecies}
-                    remove={this.props.removeSpecies} />)}
-                </div>
-                <div className="col">
-                  {this.state.species.slice(30, 35).map(p => <NavBarLink item={p}
+                  {this.state.species.slice(27, 35).map(p => <NavBarLink item={p}
                     add={this.props.addSpecies}
                     remove={this.props.removeSpecies} />)}
                 </div>
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary" >Submit</button>
+            <button type="button" className="btn btn-primary float-right" >Submit</button>
           </div>
         </div>
       </div>
