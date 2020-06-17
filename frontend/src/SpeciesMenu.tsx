@@ -8,7 +8,8 @@ type SpeciesMenuProps = {
   openSpecies: boolean,
   handleToggle: (menu: string, toggle: string) => void,
   addSpecies: (species: string) => void,
-  removeSpecies: (species: string) => void
+  removeSpecies: (species: string) => void,
+  handleMenuFilter: (evt: React.FormEvent<HTMLButtonElement>) => Promise<void>;
 }
 
 type SpeciesMenuState = {
@@ -80,7 +81,7 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary float-right" >Submit</button>
+            <button type="button" className="btn btn-primary float-right" onClick={this.props.handleMenuFilter}>Submit</button>
           </div>
         </div>
       </div>

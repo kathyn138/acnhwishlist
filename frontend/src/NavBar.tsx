@@ -1,6 +1,5 @@
 import React from 'react';
 import './NavBar.css';
-import { MouseEvent } from 'react';
 import wishlistApi from './wishlistApi';
 import PersonalitiesMenu from './PersonalitiesMenu';
 import SpeciesMenu from './SpeciesMenu';
@@ -11,8 +10,13 @@ type NavBarState = {
   selectedPersonalities: string[],
   selectedSpecies: string[]
 }
-class NavBar extends React.PureComponent<{}, NavBarState> {
-  constructor(props: {}) {
+
+type NavBarProps = {
+  filterVillagers: (personalities: string[],
+    species: string[]) => void;
+}
+class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
+  constructor(props: NavBarProps) {
     super(props);
     this.state = {
       openPersonalities: false,
@@ -88,7 +92,7 @@ class NavBar extends React.PureComponent<{}, NavBarState> {
 
   async handleSubmit(evt: React.FormEvent<HTMLButtonElement>) {
     evt.preventDefault();
-    let result = await wishlistApi.filterVillagers(
+    let result = await this.props.filterVillagers(
       this.state.selectedPersonalities, this.state.selectedSpecies);
     console.log('in nav bar', result);
   }
@@ -97,15 +101,19 @@ class NavBar extends React.PureComponent<{}, NavBarState> {
     return (
       <React.Fragment>
         <div className="row justify-content-center navbar">
-          <PersonalitiesMenu  openPersonalities={this.state.openPersonalities}
-          handleToggle={this.handleToggle}
-          addPersonality={this.addPersonality} 
-          removePersonality={this.removePersonality} />
+          <PersonalitiesMenu 
+            handleMenuFilter={this.handleSubmit}
+            openPersonalities={this.state.openPersonalities}
+            handleToggle={this.handleToggle}
+            addPersonality={this.addPersonality}
+            removePersonality={this.removePersonality} />
 
-          <SpeciesMenu openSpecies={this.state.openSpecies} 
-          handleToggle={this.handleToggle} 
-          addSpecies={this.addSpecies} 
-          removeSpecies={this.removeSpecies} />
+          <SpeciesMenu 
+            handleMenuFilter={this.handleSubmit}
+            openSpecies={this.state.openSpecies}
+            handleToggle={this.handleToggle}
+            addSpecies={this.addSpecies}
+            removeSpecies={this.removeSpecies} />
         </div>
       </React.Fragment>
 

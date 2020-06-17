@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
+import wishlistApi from './wishlistApi';
 import Wishlist from './Wishlist';
 import NavBar from './NavBar';
 import Routes from './Routes';
@@ -11,17 +12,41 @@ type appState = {
     name: string,
     image: string,
     personality: string
+  }[], 
+  villagers: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
   }[];
 }
 class App extends React.PureComponent<{}, appState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      wishlist: []
+      wishlist: [], 
+      villagers: []
     };
+    this.filterVillagers = this.filterVillagers.bind(this);
+    this.updateVillagers = this.updateVillagers.bind(this);
     this.addToWishlist = this.addToWishlist.bind(this);
     this.removeFromWishlist = this.removeFromWishlist.bind(this);
     this.checkWishlist = this.checkWishlist.bind(this);
+  }
+
+  async filterVillagers(personalities: string[], species: string[]) {
+    let result = await wishlistApi.filterVillagers(
+      personalities, species);
+    this.setState({ villagers: result });
+  }
+
+  updateVillagers(newVillagers: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }[]) {
+    this.setState({ villagers: newVillagers });
   }
 
   addToWishlist(villager: {
@@ -55,9 +80,13 @@ class App extends React.PureComponent<{}, appState> {
       <div className="App container-fluid">
         <BrowserRouter>
           <Route path="/" render={rtProps => <NavBar {...rtProps}
+            filterVillagers={this.filterVillagers}
           />} />
           <div className="row">
-            <Routes addToWishlist={this.addToWishlist}
+            <Routes 
+              villagers={this.state.villagers}
+              updateVillagers={this.updateVillagers}
+              addToWishlist={this.addToWishlist}
               checkWishlist={this.checkWishlist} 
               removeFromWishlist={this.removeFromWishlist} />
             <div className="col-md-5">

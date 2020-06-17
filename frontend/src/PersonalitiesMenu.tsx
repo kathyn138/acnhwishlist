@@ -7,7 +7,8 @@ type PersonalitiesMenuProps = {
   openPersonalities: boolean,
   handleToggle: (menu: string, toggle: string) => void,
   addPersonality: (personality: string) => void,
-  removePersonality: (personality: string) => void
+  removePersonality: (personality: string) => void,
+  handleMenuFilter: (evt: React.FormEvent<HTMLButtonElement>) => Promise<void>;
 }
 
 type PersonalitiesMenuState = {
@@ -74,7 +75,7 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary float-right" >Submit</button>
+            <button type="button" className="btn btn-primary float-right" onClick={this.props.handleMenuFilter}>Submit</button>
           </div>
         </div>
       </div>

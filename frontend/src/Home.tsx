@@ -5,6 +5,18 @@ import VillagerCard from './VillagerCard';
 import wishlistApi from './wishlistApi';
 
 type HomeProps = {
+  villagers: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }[];
+  updateVillagers: (newVillagers: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }[]) => void;
   addToWishlist: (villager: {
     id: string,
     name: string,
@@ -20,27 +32,28 @@ type HomeProps = {
   checkWishlist: (name: string) => boolean;
 }
 
-type HomeState = {
-  villagers: {
-    id: string,
-    name: string,
-    image: string,
-    personality: string
-  }[],
-}
+// type HomeState = {
+//   villagers: {
+//     id: string,
+//     name: string,
+//     image: string,
+//     personality: string
+//   }[],
+// }
 
-class Home extends React.PureComponent<HomeProps, HomeState> {
+class Home extends React.PureComponent<HomeProps> {
   constructor(props: HomeProps) {
     super(props);
-    this.state = {
-      villagers: []
-    };
+    // this.state = {
+    //   villagers: []
+    // };
     this.searchVillagers = this.searchVillagers.bind(this);
   }
 
   async searchVillagers(query: string) {
     let result = await wishlistApi.searchVillagers(query);
-    this.setState({ villagers: result });
+    this.props.updateVillagers(result);
+    console.log('in home', result)
   }
 
   render() {
@@ -52,13 +65,13 @@ class Home extends React.PureComponent<HomeProps, HomeState> {
       </p>
     </React.Fragment>;
 
-    let searchList = this.state.villagers.map(v =>
+    let searchList = this.props.villagers.map(v =>
       <VillagerCard villager={v} addToWishlist={this.props.addToWishlist}
         checkWishlist={this.props.checkWishlist}
         removeFromWishlist={this.props.removeFromWishlist}
       />);
 
-    let data = this.state.villagers.length ? searchList : welcomePage;
+    let data = this.props.villagers.length ? searchList : welcomePage;
 
 
     return (
