@@ -124,16 +124,37 @@ class Villager {
   /** Filter by personality and species */
 
   static async filter(personalities, species) {
-    // test it without the ' 
-    let filteredPersonalities = personalities.map(p => '\'' + p + '\'');
-    let filteredSpecies = species.map(s => '\'' + s + '\'');
+    // need the ' in actual query
+  
+    // easier to have separate queries then rejoin 
+    // ANY requires a subquery 
+
+    let personalitiesQuery;
+    let speciesQuery;
+    let query; 
+
+    if (personalities) {
+      let filteredPersonalities = personalities.map(p => '\'' + p + '\'');
+      personalitiesQuery = `personality IN (${filteredPersonalities.join(',')})`;
+    }
+
+    if (species) {
+      let filteredSpecies = species.map(s => '\'' + s + '\'');
+      speciesQuery = `species IN (${filteredSpecies.join(',')})`;
+    }
+
+    if (personalities && species) {
+      query = `WHERE ${personalitiesQuery} AND ${speciesQuery}`;
+    } else if (personalities) {
+      query = `WHERE ${personalitiesQuery}`;
+    } else {
+      query = `WHERE ${speciesQuery}`;
+    }
 
     const filteredRes = await db.query(
       `SELECT id, name, image, personality
       FROM villagers
-      WHERE personality IN (${filteredPersonalities.join(',')})
-      AND 
-      species IN (${filteredSpecies.join(',')})`);
+      ${query}`);
 
     return filteredRes.rows;
   }
