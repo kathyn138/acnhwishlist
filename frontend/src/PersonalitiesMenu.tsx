@@ -12,8 +12,7 @@ type PersonalitiesMenuProps = {
 }
 
 type PersonalitiesMenuState = {
-  personalities: string[],
-  menu: string
+  personalities: string[];
 }
 
 class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, PersonalitiesMenuState> {
@@ -22,17 +21,14 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
     this.state = {
       personalities: ['Cranky', 'Jock', 'Lazy', 'Normal', 'Peppy', 'Smug',
         'Snooty', 'Uchi'],
-      menu: ''
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(evt: MouseEvent<HTMLButtonElement>) {
-    if (this.state.menu === '') {
-      this.setState({ menu: 'show' });
+    if (!this.props.openPersonalities) {
       this.props.handleToggle('personalities', 'open');
     } else {
-      this.setState({ menu: '' });
       this.props.handleToggle('personalities', 'closed');
     }
   }

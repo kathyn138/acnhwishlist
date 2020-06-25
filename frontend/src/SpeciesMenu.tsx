@@ -13,8 +13,7 @@ type SpeciesMenuProps = {
 }
 
 type SpeciesMenuState = {
-  species: string[],
-  menu: string
+  species: string[];
 }
 
 class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState> {
@@ -26,18 +25,15 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
         'Eagle', 'Elephant', 'Frog', 'Goat', 'Gorilla', 'Hamster',
         'Hippo', 'Horse', 'Kangaroo', 'Koala', 'Lion', 'Mouse',
         'Monkey', 'Octopus', 'Ostrich', 'Penguin', 'Pig', 'Rabbit',
-        'Rhino', 'Sheep', 'Squirrel', 'Tiger', 'Wolf'],
-      menu: ''
+        'Rhino', 'Sheep', 'Squirrel', 'Tiger', 'Wolf']
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(evt: MouseEvent<HTMLButtonElement>) {
-    if (this.state.menu === '') {
-      this.setState({ menu: 'show' });
+    if (!this.props.openSpecies) {
       this.props.handleToggle('species', 'open');
     } else {
-      this.setState({ menu: '' });
       this.props.handleToggle('species', 'closed');
     }
   }
