@@ -34,9 +34,10 @@ class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
 
   handleToggle(menu: string, toggle: string) {
     // need to make sure other menu isn't already open
-    // before opening menu user clicks on 
+    // (via !this.state.openSpecies & !this.state.openPersonalities)
+    // before opening the menu the user clicked on
 
-    // see if it's possible to refactor this 
+    // TODO: see if it's possible to refactor this 
     if (menu === 'personalities') {
       if (!this.state.openSpecies) {
         if (toggle === 'open') {
@@ -101,14 +102,14 @@ class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
     return (
       <React.Fragment>
         <div className="row justify-content-center navbar">
-          <PersonalitiesMenu 
+          <PersonalitiesMenu
             handleMenuFilter={this.handleSubmit}
             openPersonalities={this.state.openPersonalities}
             handleToggle={this.handleToggle}
             addPersonality={this.addPersonality}
             removePersonality={this.removePersonality} />
 
-          <SpeciesMenu 
+          <SpeciesMenu
             handleMenuFilter={this.handleSubmit}
             openSpecies={this.state.openSpecies}
             handleToggle={this.handleToggle}
