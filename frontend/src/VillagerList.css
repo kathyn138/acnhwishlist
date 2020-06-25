@@ -8,9 +8,9 @@
 } */
 .vl {
 	position: relative;
-	height: 70%;
 	overflow: auto;
-	height: 97%;
+	/* height: 70%; */
+	height: 600px;
 	width: 72%;
 	/* top: 16%; */
 	left: 15%;
