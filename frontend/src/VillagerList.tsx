@@ -97,7 +97,7 @@ class VillagerList extends React.PureComponent<VillagerListProps, VillagerListSt
             {villagers}
           </div>
         </div>
-      // </div>
+      </div>
     );
   }
 }
