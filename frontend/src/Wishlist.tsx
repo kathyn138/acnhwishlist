@@ -18,9 +18,14 @@ type WishlistProps = {
 }
 class Wishlist extends React.PureComponent<WishlistProps> {
 
+
+
   render() {
+    let wishlistNames: string[] = [];
+    this.props.wishlist.map(v => wishlistNames.push(v.name));
+
     return (
-      <div className="wl">
+      <div className="wl text-center">
         <div className="wl-data">
           <div className="wl-header">
             <h3>Wishlist</h3>
@@ -28,6 +33,9 @@ class Wishlist extends React.PureComponent<WishlistProps> {
           {this.props.wishlist.map(v =>
             <WishlistCard villager={v} removeFromWishlist={this.props.removeFromWishlist} />)}
         </div>
+          <button type="button" className="btn btn-primary clipboard"
+            onClick={() => { navigator.clipboard.writeText(wishlistNames.join(', ')) }}>
+            Copy to Clipboard</button>
       </div>
     );
   }
