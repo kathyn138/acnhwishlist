@@ -6,6 +6,7 @@ villager wish list maker built with React, Typescript, Node, and PostgreSQL.
 It is currently a work in progress. 
 
 Users can browse for their favorite villagers and create a wish list for villagers they would love to have in their town. 
+Wishlists can be exported to the user's clipboard.  
 
 ![Mockup of Cranky Page](frontend/src/assets/cranky-demo.png "Screenshot of Cranky Demo")
 
@@ -34,5 +35,4 @@ App
 ```
 
 ## Future Implementations
-- Export wish list feature 
 - Zoom in when clicking on a villager's picture
