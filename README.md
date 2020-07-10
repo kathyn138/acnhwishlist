@@ -14,7 +14,7 @@ Users can browse for their favorite villagers and create a wish list for village
 - [x] Create pg dump file of database 
 - [x] Create personality and search routes
 - [x] Add routes to front end 
-- [ ] Filter by animal type and personality
+- [x] Filter by animal type and personality
 - [ ] Test routes and search functionality 
 - [ ] Incorporate acknowledgements/further links section 
 
