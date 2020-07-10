@@ -1,7 +1,8 @@
 .wl {
 	position: relative;
+	overflow: auto;
 	width: 70%;
-    height: 80%;
+    height: 500px;
     top: 10%;
 	background: #FFFAE4;
 	margin: 0 auto;
@@ -40,4 +41,7 @@
 .wl-header {
 	text-align: center;
 	margin-bottom: 10px;
+}
+.clipboard {
+	margin-top: 20px;
 }
