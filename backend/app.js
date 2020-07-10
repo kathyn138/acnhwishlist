@@ -9,8 +9,10 @@ const morgan = require("morgan");
 app.use(morgan("tiny"));
 
 const villagersRoutes = require("./routes/villagers");
+const wakeRoutes = require("./routes/wake");
 
 app.use("/villagers", villagersRoutes);
+app.use("/", wakeRoutes);
 
 /** 404 Not Found handler. */
 

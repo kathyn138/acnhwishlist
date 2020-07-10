@@ -36,6 +36,11 @@ class wishlistApi {
     let res = await this.request(`villagers/filter`, { personalities, species });
     return res.villagers;
   }
+
+  static async wakeBackend () {
+    let res = await this.request('');
+    return res;
+  }
 }
 
 export default wishlistApi;
