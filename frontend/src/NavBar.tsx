@@ -100,23 +100,27 @@ class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="row justify-content-center navbar">
-          <PersonalitiesMenu
-            handleMenuFilter={this.handleSubmit}
-            openPersonalities={this.state.openPersonalities}
-            handleToggle={this.handleToggle}
-            addPersonality={this.addPersonality}
-            removePersonality={this.removePersonality} />
+      <div className="container navbar-container">
+        <div className="row justify-content-center navbar-row">
+          <div className="col">
+            <PersonalitiesMenu
+              handleMenuFilter={this.handleSubmit}
+              openPersonalities={this.state.openPersonalities}
+              handleToggle={this.handleToggle}
+              addPersonality={this.addPersonality}
+              removePersonality={this.removePersonality} />
+          </div>
 
-          <SpeciesMenu
-            handleMenuFilter={this.handleSubmit}
-            openSpecies={this.state.openSpecies}
-            handleToggle={this.handleToggle}
-            addSpecies={this.addSpecies}
-            removeSpecies={this.removeSpecies} />
+          <div className="col">
+            <SpeciesMenu
+              handleMenuFilter={this.handleSubmit}
+              openSpecies={this.state.openSpecies}
+              handleToggle={this.handleToggle}
+              addSpecies={this.addSpecies}
+              removeSpecies={this.removeSpecies} />
+          </div>
         </div>
-      </React.Fragment>
+      </div>
 
     );
   }

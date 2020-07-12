@@ -16,8 +16,11 @@
 /* .dropdown-menu {
     width: 600%;
 } */
-.navbar {
-    margin-top: 10px;
+.navbar-container {
+    width: 70%;
+}
+.navbar-row {
+    margin-top: 20px;
 }
 .dropdown a {
     float: left;
@@ -27,10 +30,10 @@
     padding: 14px 16px;
     text-decoration: none;
 }
-.dropdown button {
+/* .dropdown button {
     margin-right: 50px;
 }
 .dropdown-menu>button {
     margin-right: 14px;
 }
-  
+   */

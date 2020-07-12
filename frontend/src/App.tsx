@@ -12,7 +12,7 @@ type appState = {
     name: string,
     image: string,
     personality: string
-  }[], 
+  }[],
   villagers: {
     id: string,
     name: string,
@@ -24,7 +24,7 @@ class App extends React.PureComponent<{}, appState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      wishlist: [], 
+      wishlist: [],
       villagers: []
     };
     this.filterVillagers = this.filterVillagers.bind(this);
@@ -35,8 +35,8 @@ class App extends React.PureComponent<{}, appState> {
   }
 
   async componentDidMount() {
-    let wake = await wishlistApi.wakeBackend();
-    console.log(wake);
+    // let wake = await wishlistApi.wakeBackend();
+    // console.log(wake);
   }
 
   async filterVillagers(personalities: string[], species: string[]) {
@@ -69,7 +69,7 @@ class App extends React.PureComponent<{}, appState> {
     image: string,
     personality: string
   }) {
-    this.setState({ wishlist: this.state.wishlist.filter(v => v.name !== villager.name)});
+    this.setState({ wishlist: this.state.wishlist.filter(v => v.name !== villager.name) });
   }
 
   checkWishlist(name: string) {
@@ -82,25 +82,29 @@ class App extends React.PureComponent<{}, appState> {
 
   render() {
     return (
-      <div className="App container-fluid">
+      <React.Fragment>
         <BrowserRouter>
           <Route path="/" render={rtProps => <NavBar {...rtProps}
             filterVillagers={this.filterVillagers}
           />} />
+        </BrowserRouter>
+        <div className="App container-fluid">
           <div className="row">
-            <Routes 
-              villagers={this.state.villagers}
-              updateVillagers={this.updateVillagers}
-              addToWishlist={this.addToWishlist}
-              checkWishlist={this.checkWishlist} 
-              removeFromWishlist={this.removeFromWishlist} />
+            <BrowserRouter>
+              <Routes
+                villagers={this.state.villagers}
+                updateVillagers={this.updateVillagers}
+                addToWishlist={this.addToWishlist}
+                checkWishlist={this.checkWishlist}
+                removeFromWishlist={this.removeFromWishlist} />
+            </BrowserRouter>
             <div className="col-md-5">
-              <Wishlist wishlist={this.state.wishlist} 
-              removeFromWishlist={this.removeFromWishlist}/>
+              <Wishlist wishlist={this.state.wishlist}
+                removeFromWishlist={this.removeFromWishlist} />
             </div>
           </div>
-        </BrowserRouter>
-      </div>
+        </div>
+      </React.Fragment>
     );
   }
 }
