@@ -1,10 +1,15 @@
 .dropdown-menu.species {
     width: 550px;
     left: -220px;
+    background-color: #00C2B1;
+    border: none;
 }
 .submit-species-btn {
     margin-right: 22px;
+    color: #FFFFFF;
+    background-color: #03A19B;
 }
+
 @media screen and (max-width: 992px) {
     .dropdown-menu.species {
         width: 500px;

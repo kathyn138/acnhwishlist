@@ -1,9 +1,13 @@
 .dropdown-menu.personalities {
     width: 450px;
     left: -145px;
+    background-color: #00C2B1;
+    border: none;
 }
 .submit-personality-btn {
     margin-right: 22px;
+    color: #FFFFFF;
+    background-color: #03A19B;
 }
 
 @media screen and (max-width: 768px) {
