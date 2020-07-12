@@ -1,5 +1,4 @@
 import React from 'react';
-import './NavBarLink.css';
 
 type NavBarLinkProps = {
   item: string,
@@ -35,7 +34,7 @@ class NavBarLink extends React.PureComponent<NavBarLinkProps, NavBarLinkState> {
     let color = this.state.selected ? 'selected' : '';
 
     return (
-      <li><a href="#" className={color}
+      <li><a href="#" className={`navbar-link ${color}`}
         onClick={() => this.onClick(this.props.item)} >{this.props.item}</a></li>
     );
   }
