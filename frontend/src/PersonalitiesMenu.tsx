@@ -55,7 +55,7 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary float-right 
+            <button type="button" className="btn float-right 
             submit-personality-btn" onClick={this.props.handleMenuFilter}>Submit</button>
           </div>
         </div>
