@@ -1,4 +1,26 @@
 .dropdown-menu.personalities {
-    width: 500px;
-    left: -80px;
+    width: 450px;
+    left: -145px;
+}
+.submit-personality-btn {
+    margin-right: 22px;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-menu.personalities {
+        width: 370px;
+        left: -100px;
+    }
+}
+@media screen and (max-width: 544px) {
+    .dropdown-menu.personalities {
+        width: 340px;
+        left: -90px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .dropdown-menu.personalities {
+        width: 280px;
+        left: -65px;
+    }
 }

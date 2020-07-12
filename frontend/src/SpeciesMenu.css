@@ -1,4 +1,31 @@
 .dropdown-menu.species {
     width: 550px;
-    left: -320px;
+    left: -220px;
+}
+.submit-species-btn {
+    margin-right: 22px;
+}
+@media screen and (max-width: 992px) {
+    .dropdown-menu.species {
+        width: 500px;
+        left: -195px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .dropdown-menu.species {
+        width: 400px;
+        left: -140px;
+    }
+}
+@media screen and (max-width: 544px) {
+    .dropdown-menu.species {
+        width: 340px;
+        left: -112px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .dropdown-menu.species {
+        width: 300px;
+        left: -95px;
+    }
 }
