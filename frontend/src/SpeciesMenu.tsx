@@ -43,41 +43,26 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
 
     return (
       <div className="navbar">
-        <div className="dropdown">
+        <div className="dropdown mx-auto">
           <button className="btn btn-secondary dropdown-toggle" type="button"
-            id="dropdownMenu2" aria-haspopup="true" aria-expanded="false"
+            aria-haspopup="true" aria-expanded="false"
             onClick={this.handleClick}>
             Species
           </button>
 
-          {/* refactor if possible to keep code dry */}
-          <div className={`dropdown-menu ${show} species`} aria-labelledby="dropdownMenu2">
+          <div className={`dropdown-menu ${show} species`} aria-labelledby="species">
             <div className="dropdown-content">
               <div className="row">
                 <div className="col">
-                  {this.state.species.slice(0, 9).map(p => <NavBarLink item={p}
-                    add={this.props.addSpecies}
-                    remove={this.props.removeSpecies} />)}
-                </div>
-                <div className="col">
-                  {this.state.species.slice(9, 18).map(p => <NavBarLink item={p}
-                    add={this.props.addSpecies}
-                    remove={this.props.removeSpecies} />)}
-                </div>
-                <div className="col">
-                  {this.state.species.slice(18, 27).map(p => <NavBarLink item={p}
-                    add={this.props.addSpecies}
-                    remove={this.props.removeSpecies} />)}
-                </div>
-                <div className="col">
-                  {this.state.species.slice(27, 35).map(p => <NavBarLink item={p}
+                  {this.state.species.map(p => <NavBarLink item={p}
                     add={this.props.addSpecies}
                     remove={this.props.removeSpecies} />)}
                 </div>
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary float-right" onClick={this.props.handleMenuFilter}>Submit</button>
+            <button type="button" className="btn btn-primary float-right 
+            submit-species-btn" onClick={this.props.handleMenuFilter}>Submit</button>
           </div>
         </div>
       </div>

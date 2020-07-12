@@ -37,41 +37,26 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
     let show = this.props.openPersonalities ? 'show' : '';
     return (
       <div className="navbar">
-        <div className="dropdown">
+        <div className="dropdown mx-auto">
           <button className="btn btn-secondary dropdown-toggle" type="button"
-            id="dropdownMenu2" aria-haspopup="true" aria-expanded="false"
+            aria-haspopup="true" aria-expanded="false"
             onClick={this.handleClick}>
             Personalities
         </button>
 
-          {/* refactor if possible to keep code dry */}
-          <div className={`dropdown-menu ${show} personalities`} aria-labelledby="dropdownMenu2">
+          <div className={`dropdown-menu ${show} personalities`} aria-labelledby="personalities">
             <div className="dropdown-content">
               <div className="row">
-                <div className="col-sm-3">
-                  {this.state.personalities.slice(0, 2).map(p => <NavBarLink item={p}
+                <div className="col">
+                  {this.state.personalities.map(p => <NavBarLink item={p}
                     add={this.props.addPersonality}
                     remove={this.props.removePersonality} />)}
-                </div>
-                <div className="col-sm-3">
-                  {this.state.personalities.slice(2, 4).map(p => <NavBarLink item={p}
-                    add={this.props.addPersonality}
-                    remove={this.props.removePersonality} />)}
-                </div>
-                <div className="col-sm-3">
-                  {this.state.personalities.slice(4, 6).map(p => <NavBarLink item={p}
-                    add={this.props.addPersonality}
-                    remove={this.props.removePersonality} />)}
-                </div>
-                <div className="col-sm-3">
-                  <NavBarLink item={this.state.personalities[6]}
-                    add={this.props.addPersonality}
-                    remove={this.props.removePersonality} />
                 </div>
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary float-right" onClick={this.props.handleMenuFilter}>Submit</button>
+            <button type="button" className="btn btn-primary float-right 
+            submit-personality-btn" onClick={this.props.handleMenuFilter}>Submit</button>
           </div>
         </div>
       </div>
