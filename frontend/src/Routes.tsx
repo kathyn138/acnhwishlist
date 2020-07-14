@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from './Home';
-import VillagerList from './VillagerList';
 
 type RouteProps = {
   villagers: {
@@ -42,13 +41,6 @@ class Routes extends React.PureComponent<RouteProps> {
             addToWishlist={this.props.addToWishlist}
             checkWishlist={this.props.checkWishlist} 
             removeFromWishlist={this.props.removeFromWishlist} />} />
-          <Route path="/villagers/:personality" render={rtProps =>
-            <VillagerList {...rtProps}
-              villagers={this.props.villagers}
-              updateVillagers={this.props.updateVillagers}
-              addToWishlist={this.props.addToWishlist}
-              checkWishlist={this.props.checkWishlist}
-              removeFromWishlist={this.props.removeFromWishlist} />} />
           <Redirect to="/" />
         </Switch>
       </React.Fragment>
