@@ -35,10 +35,11 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
 
   render() {
     let show = this.props.openPersonalities ? 'show' : '';
+
     return (
       <div className="navbar">
         <div className="dropdown mx-auto">
-          <button className="btn btn-secondary dropdown-toggle" type="button"
+          <button className="btn dropdown-p-menu-btn dropdown-toggle" type="button"
             aria-haspopup="true" aria-expanded="false"
             onClick={this.handleClick}>
             Personalities

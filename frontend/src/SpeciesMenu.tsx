@@ -44,7 +44,7 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
     return (
       <div className="navbar">
         <div className="dropdown mx-auto">
-          <button className="btn btn-secondary dropdown-toggle" type="button"
+          <button className="btn dropdown-s-menu-btn dropdown-toggle" type="button"
             aria-haspopup="true" aria-expanded="false"
             onClick={this.handleClick}>
             Species
