@@ -26,6 +26,12 @@
 	text-align: center;
 	margin-bottom: 10px;
 }
-.clipboard {
+.wishlist-copy-btn {
 	margin-top: 20px;
+	color: #FFFFFF;
+    background-color: rgb(55, 210, 237);
+}
+.wishlist-copy-btn:hover {
+	color: #FFFFFF;
+    background-color: #03A19B;
 }
