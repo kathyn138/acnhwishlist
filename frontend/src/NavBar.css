@@ -12,6 +12,9 @@
     font-size: 16px;
     color: white;
 }
+.dropdown a:hover {
+    color: #03A19B;
+}
 .dropdown a.selected {
     color: #03256C;
 }
