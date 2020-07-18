@@ -61,7 +61,7 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary float-right 
+            <button type="button" className="btn float-right 
             submit-species-btn" onClick={this.props.handleMenuFilter}>Submit</button>
           </div>
         </div>
