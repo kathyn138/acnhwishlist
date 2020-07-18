@@ -1,11 +1,33 @@
+.dropdown-p-menu-btn {
+    color: #FFFFFF;
+    background-color: #00C2B1;
+    /* background-color: rgb(87, 199, 183); */
+}
+.dropdown-p-menu-btn:focus {
+    box-shadow: 0 0 0 0.2rem #03A19B;
+}
+.dropdown-p-menu-btn:hover {
+    color: #FFFFFF;
+    /* background-color: #81CBC0; */
+    background-color: rgb(87, 199, 183);
+
+    /* background-color: #0CC5B9; */
+}
+/* 1F2421 maybe this dark green */
+
 .dropdown-menu.personalities {
     width: 450px;
     left: -145px;
     background-color: #00C2B1;
     border: none;
 }
+
 .submit-personality-btn {
     margin-right: 22px;
+    color: #FFFFFF;
+    background-color: rgb(55, 210, 237);
+}
+.submit-personality-btn:hover {
     color: #FFFFFF;
     background-color: #03A19B;
 }

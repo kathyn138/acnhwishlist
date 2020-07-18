@@ -1,3 +1,15 @@
+.dropdown-s-menu-btn {
+    color: #FFFFFF;
+    background-color: #00C2B1;
+}
+.dropdown-s-menu-btn:focus {
+    box-shadow: 0 0 0 0.2rem #03A19B;
+}
+.dropdown-s-menu-btn:hover {
+    color: #FFFFFF;
+    background-color: rgb(87, 199, 183);
+}
+
 .dropdown-menu.species {
     width: 550px;
     left: -220px;
@@ -6,6 +18,10 @@
 }
 .submit-species-btn {
     margin-right: 22px;
+    color: #FFFFFF;
+    background-color: rgb(55, 210, 237);
+}
+.submit-species-btn:hover {
     color: #FFFFFF;
     background-color: #03A19B;
 }
