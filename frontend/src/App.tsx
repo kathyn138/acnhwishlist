@@ -6,6 +6,7 @@ import Wishlist from './Wishlist';
 import NavBar from './NavBar';
 import Routes from './Routes';
 import ReactGA from 'react-ga';
+// import $ from 'jquery';
 
 ReactGA.initialize('UA-151524212-3');
 ReactGA.pageview('/homepage');
@@ -24,6 +25,11 @@ type appState = {
     personality: string
   }[];
 }
+
+interface JQuery {
+  tooltip() : any;
+}
+
 class App extends React.PureComponent<{}, appState> {
   constructor(props: {}) {
     super(props);
@@ -41,6 +47,8 @@ class App extends React.PureComponent<{}, appState> {
   async componentDidMount() {
     let wake = await wishlistApi.wakeBackend();
     console.log(wake);
+
+    ($('[data-toggle="tooltip"]') as any).tooltip();
   }
 
   async filterVillagers(personalities: string[], species: string[]) {
@@ -84,8 +92,23 @@ class App extends React.PureComponent<{}, appState> {
     return (
       <React.Fragment>
         <BrowserRouter>
-        <NavBar filterVillagers={this.filterVillagers}
-          goHome={this.goHome} />
+          <div className="container-fluid">
+            <div className="row float-right">
+              <div className="col about-link-col">
+                <Link to="/about">
+                  <img
+                  data-toggle="tooltip" data-placement="top" title="About"
+                    className="about-btn"
+                    src="https://cdn.discordapp.com/attachments/709285942430531650/734388307949125742/balloon-present.png"
+                    alt=""
+                    ></img>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+          <NavBar filterVillagers={this.filterVillagers}
+            goHome={this.goHome} />
           <div className="App container-fluid">
             <div className="row">
               <Routes
@@ -93,15 +116,8 @@ class App extends React.PureComponent<{}, appState> {
                 wishlist={this.state.wishlist}
                 returnVillagersSearch={this.returnVillagersSearch}
                 addToWishlist={this.addToWishlist}
-                removeFromWishlist={this.removeFromWishlist}  />
-              {/* <div className="col-md-5">
-                <Wishlist wishlist={this.state.wishlist}
-                  removeFromWishlist={this.removeFromWishlist} />
-              </div> */}
+                removeFromWishlist={this.removeFromWishlist} />
             </div>
-          </div>
-          <div className="container">
-            <Link to="/about">about lmfao</Link>
           </div>
         </BrowserRouter>
       </React.Fragment>
