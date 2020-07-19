@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "https://acwlabackend.herokuapp.com";
+const BASE_URL = "https://acnhwl-backend.herokuapp.com";
 
 class wishlistApi {
 
