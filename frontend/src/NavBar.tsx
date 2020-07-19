@@ -2,6 +2,7 @@ import React from 'react';
 import './NavBar.css';
 import PersonalitiesMenu from './PersonalitiesMenu';
 import SpeciesMenu from './SpeciesMenu';
+import { Link } from "react-router-dom";
 
 type NavBarState = {
   openPersonalities: boolean,
@@ -103,8 +104,10 @@ class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
         <div className="row justify-content-center navbar-row">
 
           <div className="col-1 home-nav">
-            <i className="fas fa-home" onClick={this.props.goHome}></i>
+            <Link to="/"><i className="fas fa-home"
+              onClick={this.props.goHome}></i></Link>
           </div>
+
           <div className="col">
             <PersonalitiesMenu
               handleMenuFilter={this.handleSubmit}
