@@ -33,8 +33,8 @@ class NavBarLink extends React.PureComponent<NavBarLinkProps, NavBarLinkState> {
     let color = this.state.selected ? 'selected' : '';
 
     return (
-      <li><a href="#" className={`navbar-link ${color}`}
-        onClick={() => this.onClick(this.props.item)} >{this.props.item}</a></li>
+      <li><span className={`navbar-link ${color}`}
+        onClick={() => this.onClick(this.props.item)} >{this.props.item}</span></li>
     );
   }
 }

@@ -4,7 +4,7 @@
 .navbar-row {
     margin-top: 20px;
 }
-.dropdown a {
+.dropdown span {
     float: left;
     padding: 14px 16px;
     text-decoration: none;
@@ -12,9 +12,9 @@
     font-size: 16px;
     color: white;
 }
-.dropdown a:hover {
+.dropdown span:hover {
     color: #03A19B;
 }
-.dropdown a.selected {
+.dropdown span.selected {
     color: #03256C;
 }
