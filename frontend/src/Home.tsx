@@ -53,7 +53,7 @@ class Home extends React.PureComponent<HomeProps> {
       <img className="welcome-isabelle" src="https://cdn.discordapp.com/attachments/709246246359138316/709246283617009724/welcome-isabelle.png" alt=""></img>
       <p className="home-message">
         Search for your favorite villager or
-        click on any of the personality categories to get started!
+        click on any of the personality categories to get started!dasd
       </p>
     </React.Fragment>;
 
