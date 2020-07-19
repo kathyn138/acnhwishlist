@@ -23,21 +23,10 @@ type VillagerCardProps = {
   checkWishlist: (name: string) => boolean;
 }
 
-type VillagerCardState = {
-  onWishlist: boolean;
-}
-class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardState> {
+class VillagerCard extends React.PureComponent<VillagerCardProps> {
   constructor(props: VillagerCardProps) {
     super(props);
-    this.state = {
-      onWishlist: false
-    };
     this.handleAdd = this.handleAdd.bind(this);
-  }
-
-  async componentDidMount() {
-    let result = await this.props.checkWishlist(this.props.villager.name);
-    this.setState({ onWishlist: result });
   }
 
   async handleAdd(villager: {
@@ -61,8 +50,9 @@ class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardSt
   }
 
   render() {
-    let { name, personality, image } = this.props.villager;
-    let heart = this.state.onWishlist ? <i className="fas fa-heart filled-in-heart"
+    let { name, image } = this.props.villager;
+
+    let heart = this.props.checkWishlist(name) ? <i className="fas fa-heart filled-in-heart"
       onClick={() => this.handleRemove(this.props.villager)}
     ></i>
       : <i className="far fa-heart"
