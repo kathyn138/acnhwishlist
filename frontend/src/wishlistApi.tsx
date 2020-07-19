@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { number } from 'prop-types';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:5000";
 
@@ -32,7 +31,7 @@ class wishlistApi {
     return res.villagers;
   }
 
-  static async wakeBackend () {
+  static async wakeBackend() {
     let res = await this.request('');
     return res;
   }
