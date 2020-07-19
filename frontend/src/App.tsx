@@ -35,6 +35,7 @@ class App extends React.PureComponent<{}, appState> {
     this.returnVillagersSearch = this.returnVillagersSearch.bind(this);
     this.addToWishlist = this.addToWishlist.bind(this);
     this.removeFromWishlist = this.removeFromWishlist.bind(this);
+    this.goHome = this.goHome.bind(this);
   }
 
   async componentDidMount() {
@@ -75,12 +76,17 @@ class App extends React.PureComponent<{}, appState> {
     this.setState({ wishlist: this.state.wishlist.filter(v => v.name !== villager.name) });
   }
 
+  goHome() {
+    this.setState({ villagers: [] });
+  }
+
   render() {
     return (
       <React.Fragment>
         <BrowserRouter>
           <Route path="/" render={rtProps => <NavBar {...rtProps}
             filterVillagers={this.filterVillagers}
+            goHome={this.goHome}
           />} />
         </BrowserRouter>
         <div className="App container-fluid">

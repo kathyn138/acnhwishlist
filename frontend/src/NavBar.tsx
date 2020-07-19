@@ -12,7 +12,8 @@ type NavBarState = {
 
 type NavBarProps = {
   filterVillagers: (personalities: string[],
-    species: string[]) => void;
+    species: string[]) => void,
+  goHome: () => void
 }
 class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
   constructor(props: NavBarProps) {
@@ -100,6 +101,10 @@ class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
     return (
       <div className="container navbar-container">
         <div className="row justify-content-center navbar-row">
+
+          <div className="col-1 home-nav">
+            <i className="fas fa-home" onClick={this.props.goHome}></i>
+          </div>
           <div className="col">
             <PersonalitiesMenu
               handleMenuFilter={this.handleSubmit}
