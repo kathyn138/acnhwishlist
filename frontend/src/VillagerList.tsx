@@ -36,19 +36,17 @@ type VillagerListProps = {
 }
 
 class VillagerList extends React.PureComponent<VillagerListProps> {
-  constructor(props: VillagerListProps) {
-    super(props);
-  }
-
   render() {
     let villagers = this.props.villagers.map(v =>
-      <VillagerCard villager={v} wishlist={this.props.wishlist}
+      <VillagerCard villager={v} key={v.name}
+        wishlist={this.props.wishlist}
         addToWishlist={this.props.addToWishlist}
         removeFromWishlist={this.props.removeFromWishlist}
       />);
 
     let loadingMessage = <React.Fragment>
       <img className="loading-gif"
+        alt=""
         src="https://cdn.discordapp.com/attachments/709643259789705317/732414740134887545/tenor.gif"></img>
       <p className="loading-message">
         Loading...

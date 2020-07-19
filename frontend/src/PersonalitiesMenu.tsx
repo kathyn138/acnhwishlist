@@ -49,7 +49,9 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
             <div className="dropdown-content">
               <div className="row">
                 <div className="col">
-                  {this.state.personalities.map(p => <NavBarLink item={p}
+                  {this.state.personalities.map(p => <NavBarLink 
+                    key={p}
+                    item={p}
                     add={this.props.addPersonality}
                     remove={this.props.removePersonality} />)}
                 </div>

@@ -54,7 +54,9 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
             <div className="dropdown-content">
               <div className="row">
                 <div className="col">
-                  {this.state.species.map(p => <NavBarLink item={p}
+                  {this.state.species.map(s => <NavBarLink 
+                    key={s}
+                    item={s}
                     add={this.props.addSpecies}
                     remove={this.props.removeSpecies} />)}
                 </div>

@@ -92,9 +92,8 @@ class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
 
   async handleSubmit(evt: React.FormEvent<HTMLButtonElement>) {
     evt.preventDefault();
-    let result = await this.props.filterVillagers(
+    await this.props.filterVillagers(
       this.state.selectedPersonalities, this.state.selectedSpecies);
-    console.log('in nav bar', result);
   }
 
   render() {
