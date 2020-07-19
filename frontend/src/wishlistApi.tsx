@@ -22,11 +22,6 @@ class wishlistApi {
     }
   }
 
-  static async getVillagers(personality: string) {
-    let res = await this.request(`villagers/${personality}`);
-    return res.villagers;
-  }
-
   static async searchVillagers(query: string) {
     let res = await this.request(`villagers`, { name: query });
     return res.villager;
