@@ -154,7 +154,8 @@ class Villager {
     const filteredRes = await db.query(
       `SELECT id, name, image, personality
       FROM villagers
-      ${query}`);
+      ${query}
+      ORDER BY name`);
 
     return filteredRes.rows;
   }
