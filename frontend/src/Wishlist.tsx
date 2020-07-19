@@ -17,9 +17,6 @@ type WishlistProps = {
   }) => void,
 }
 class Wishlist extends React.PureComponent<WishlistProps> {
-
-
-
   render() {
     let wishlistNames: string[] = [];
     this.props.wishlist.map(v => wishlistNames.push(v.name));

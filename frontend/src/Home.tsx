@@ -1,7 +1,6 @@
 import React from 'react';
 import './Home.css';
 import SearchBar from './SearchBar';
-import VillagerCard from './VillagerCard';
 import wishlistApi from './wishlistApi';
 import VillagerList from './VillagerList';
 

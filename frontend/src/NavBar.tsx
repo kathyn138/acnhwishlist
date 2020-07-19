@@ -1,6 +1,5 @@
 import React from 'react';
 import './NavBar.css';
-import wishlistApi from './wishlistApi';
 import PersonalitiesMenu from './PersonalitiesMenu';
 import SpeciesMenu from './SpeciesMenu';
 

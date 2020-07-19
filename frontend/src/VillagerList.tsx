@@ -1,13 +1,7 @@
 import React from 'react';
 import './VillagerList.css';
-import wishlistApi from './wishlistApi';
 import VillagerCard from './VillagerCard';
-import SearchBar from './SearchBar';
-import { RouteComponentProps } from 'react-router';
 
-interface MatchParams {
-  personality: string;
-}
 type VillagerListProps = {
   villagers: {
     id: string,
@@ -41,10 +35,6 @@ type VillagerListProps = {
   }) => void,
 }
 
-type VillagerListState = {
-  searching: boolean,
-  personality: string
-}
 class VillagerList extends React.PureComponent<VillagerListProps> {
   constructor(props: VillagerListProps) {
     super(props);
