@@ -17,7 +17,6 @@ class NavBarLink extends React.PureComponent<NavBarLinkProps, NavBarLinkState> {
       selected: false
     };
     this.onClick = this.onClick.bind(this);
-    // this.onSubmit = this.onSubmit.bind(this);
   }
 
   onClick(type: string) {
