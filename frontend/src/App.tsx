@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import './App.css';
 import wishlistApi from './wishlistApi';
 import Wishlist from './Wishlist';
@@ -84,27 +84,26 @@ class App extends React.PureComponent<{}, appState> {
     return (
       <React.Fragment>
         <BrowserRouter>
-          <Route path="/" render={rtProps => <NavBar {...rtProps}
-            filterVillagers={this.filterVillagers}
-            goHome={this.goHome}
-          />} />
-        </BrowserRouter>
-        <div className="App container-fluid">
-          <div className="row">
-            <BrowserRouter>
+        <NavBar filterVillagers={this.filterVillagers}
+          goHome={this.goHome} />
+          <div className="App container-fluid">
+            <div className="row">
               <Routes
                 villagers={this.state.villagers}
                 wishlist={this.state.wishlist}
                 returnVillagersSearch={this.returnVillagersSearch}
                 addToWishlist={this.addToWishlist}
-                removeFromWishlist={this.removeFromWishlist} />
-            </BrowserRouter>
-            <div className="col-md-5">
-              <Wishlist wishlist={this.state.wishlist}
-                removeFromWishlist={this.removeFromWishlist} />
+                removeFromWishlist={this.removeFromWishlist}  />
+              {/* <div className="col-md-5">
+                <Wishlist wishlist={this.state.wishlist}
+                  removeFromWishlist={this.removeFromWishlist} />
+              </div> */}
             </div>
           </div>
-        </div>
+          <div className="container">
+            <Link to="/about">about lmfao</Link>
+          </div>
+        </BrowserRouter>
       </React.Fragment>
     );
   }
