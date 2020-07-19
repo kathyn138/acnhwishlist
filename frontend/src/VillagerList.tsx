@@ -14,8 +14,8 @@ type VillagerListProps = {
     name: string,
     image: string,
     personality: string
-  }[];
-  updateVillagers: (newVillagers: {
+  }[],
+  returnVillagersSearch: (newVillagers: {
     id: string,
     name: string,
     image: string,
@@ -62,19 +62,19 @@ class VillagerList extends React.PureComponent<VillagerListProps> {
   // async componentDidUpdate(prevProps: VillagerListProps) {
   //   if (this.props.match.params.personality !== prevProps.match.params.personality) {
   //     let result = await wishlistApi.getVillagers(this.props.match.params.personality);
-  //     this.props.updateVillagers(result);
+  //     this.props.returnVillagersSearch(result);
   //     // this.setState({ villagers: result });
   //   }
   // }
   // async componentDidMount() {
   //   let result = await wishlistApi.getVillagers(this.props.match.params.personality);
-  //   this.props.updateVillagers(result);
+  //   this.props.returnVillagersSearch(result);
   //   // this.setState({ villagers: result });
   // }
 
   // async searchVillagers(query: string) {
   //   let result = await wishlistApi.searchVillagers(query);
-  //   this.props.updateVillagers(result);
+  //   this.props.returnVillagersSearch(result);
   //   this.setState({ searching: true });
   // }
 

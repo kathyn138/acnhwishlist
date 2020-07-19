@@ -12,7 +12,7 @@ type HomeProps = {
     image: string,
     personality: string
   }[];
-  updateVillagers: (newVillagers: {
+  returnVillagersSearch: (newVillagers: {
     id: string,
     name: string,
     image: string,
@@ -41,7 +41,7 @@ class Home extends React.PureComponent<HomeProps> {
 
   async searchVillagers(query: string) {
     let result = await wishlistApi.searchVillagers(query);
-    this.props.updateVillagers(result);
+    this.props.returnVillagersSearch(result);
   }
 
   render() {
@@ -54,7 +54,7 @@ class Home extends React.PureComponent<HomeProps> {
     </React.Fragment>;
 
     let homeData = this.props.villagers.length ? <VillagerList villagers={this.props.villagers}
-      updateVillagers={this.props.updateVillagers}
+      returnVillagersSearch={this.props.returnVillagersSearch}
       addToWishlist={this.props.addToWishlist}
       checkWishlist={this.props.checkWishlist}
       removeFromWishlist={this.props.removeFromWishlist} /> : welcomeMessage;

@@ -8,8 +8,8 @@ type RouteProps = {
     name: string,
     image: string,
     personality: string
-  }[];
-  updateVillagers: (newVillagers: {
+  }[],
+  returnVillagersSearch: (newVillagers: {
     id: string,
     name: string,
     image: string,
@@ -37,7 +37,7 @@ class Routes extends React.PureComponent<RouteProps> {
         <Switch>
           <Route exact path="/" render={() => <Home
             villagers={this.props.villagers}
-            updateVillagers={this.props.updateVillagers}
+            returnVillagersSearch={this.props.returnVillagersSearch}
             addToWishlist={this.props.addToWishlist}
             checkWishlist={this.props.checkWishlist} 
             removeFromWishlist={this.props.removeFromWishlist} />} />

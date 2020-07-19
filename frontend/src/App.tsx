@@ -28,7 +28,7 @@ class App extends React.PureComponent<{}, appState> {
       villagers: []
     };
     this.filterVillagers = this.filterVillagers.bind(this);
-    this.updateVillagers = this.updateVillagers.bind(this);
+    this.returnVillagersSearch = this.returnVillagersSearch.bind(this);
     this.addToWishlist = this.addToWishlist.bind(this);
     this.removeFromWishlist = this.removeFromWishlist.bind(this);
     this.checkWishlist = this.checkWishlist.bind(this);
@@ -45,7 +45,7 @@ class App extends React.PureComponent<{}, appState> {
     this.setState({ villagers: result });
   }
 
-  updateVillagers(newVillagers: {
+  returnVillagersSearch(newVillagers: {
     id: string,
     name: string,
     image: string,
@@ -93,7 +93,7 @@ class App extends React.PureComponent<{}, appState> {
             <BrowserRouter>
               <Routes
                 villagers={this.state.villagers}
-                updateVillagers={this.updateVillagers}
+                returnVillagersSearch={this.returnVillagersSearch}
                 addToWishlist={this.addToWishlist}
                 checkWishlist={this.checkWishlist}
                 removeFromWishlist={this.removeFromWishlist} />
