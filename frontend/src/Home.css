@@ -1,11 +1,3 @@
-/* .home-top {
-	position: relative;
-	width: 48vw;
-	height: 27vw;
-	border-radius: 50%;
-	background: #FFFAE4;
-	margin: 0 auto;
-} */
 .home {
 	position: relative;
 	height: 500px;
@@ -22,15 +14,6 @@
 	margin: 0 auto;
 	width: 90%;
 }
-/* .home-bot {
-	position: absolute;
-	height: 15vw;
-	width: 43vw;
-	top: 70%;
-	left: 5%;
-	border-radius: 50%;
-	background: #FFFAE4;
-} */
 .home::-webkit-scrollbar-track {
   border-radius: .25rem;
   background-color: #D4CFB4;
