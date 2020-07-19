@@ -11,7 +11,13 @@ type HomeProps = {
     name: string,
     image: string,
     personality: string
-  }[];
+  }[],
+  wishlist: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }[],
   returnVillagersSearch: (newVillagers: {
     id: string,
     name: string,
@@ -30,7 +36,6 @@ type HomeProps = {
     image: string,
     personality: string
   }) => void,
-  checkWishlist: (name: string) => boolean;
 }
 
 class Home extends React.PureComponent<HomeProps> {
@@ -53,10 +58,11 @@ class Home extends React.PureComponent<HomeProps> {
       </p>
     </React.Fragment>;
 
-    let homeData = this.props.villagers.length ? <VillagerList villagers={this.props.villagers}
+    let homeData = this.props.villagers.length ? <VillagerList 
+      villagers={this.props.villagers}
+      wishlist={this.props.wishlist}
       returnVillagersSearch={this.props.returnVillagersSearch}
       addToWishlist={this.props.addToWishlist}
-      checkWishlist={this.props.checkWishlist}
       removeFromWishlist={this.props.removeFromWishlist} /> : welcomeMessage;
 
     return (

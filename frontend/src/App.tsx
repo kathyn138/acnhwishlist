@@ -31,7 +31,6 @@ class App extends React.PureComponent<{}, appState> {
     this.returnVillagersSearch = this.returnVillagersSearch.bind(this);
     this.addToWishlist = this.addToWishlist.bind(this);
     this.removeFromWishlist = this.removeFromWishlist.bind(this);
-    this.checkWishlist = this.checkWishlist.bind(this);
   }
 
   async componentDidMount() {
@@ -72,14 +71,6 @@ class App extends React.PureComponent<{}, appState> {
     this.setState({ wishlist: this.state.wishlist.filter(v => v.name !== villager.name) });
   }
 
-  checkWishlist(name: string) {
-    if (this.state.wishlist.filter(villager => villager.name === name).length === 1) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   render() {
     return (
       <React.Fragment>
@@ -93,9 +84,9 @@ class App extends React.PureComponent<{}, appState> {
             <BrowserRouter>
               <Routes
                 villagers={this.state.villagers}
+                wishlist={this.state.wishlist}
                 returnVillagersSearch={this.returnVillagersSearch}
                 addToWishlist={this.addToWishlist}
-                checkWishlist={this.checkWishlist}
                 removeFromWishlist={this.removeFromWishlist} />
             </BrowserRouter>
             <div className="col-md-5">

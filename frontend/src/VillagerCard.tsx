@@ -8,6 +8,12 @@ type VillagerCardProps = {
     image: string,
     personality: string
   },
+  wishlist: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }[],
   addToWishlist: (villager: {
     id: string,
     name: string,
@@ -20,7 +26,6 @@ type VillagerCardProps = {
     image: string,
     personality: string
   }) => void,
-  checkWishlist: (name: string) => boolean;
 }
 
 class VillagerCard extends React.PureComponent<VillagerCardProps> {
@@ -36,7 +41,6 @@ class VillagerCard extends React.PureComponent<VillagerCardProps> {
     personality: string
   }) {
     await this.props.addToWishlist(this.props.villager);
-    this.setState({ onWishlist: true });
   }
 
   async handleRemove(villager: {
@@ -46,13 +50,20 @@ class VillagerCard extends React.PureComponent<VillagerCardProps> {
     personality: string
   }) {
     await this.props.removeFromWishlist(this.props.villager);
-    this.setState({ onWishlist: false });
   }
 
   render() {
     let { name, image } = this.props.villager;
 
-    let heart = this.props.checkWishlist(name) ? <i className="fas fa-heart filled-in-heart"
+    let onWishlist = false; 
+
+    if (this.props.wishlist.filter(villager => villager.name === name).length === 1) {
+      onWishlist = true;
+    } else {
+      onWishlist = false;
+    }
+
+    let heart = onWishlist ? <i className="fas fa-heart filled-in-heart"
       onClick={() => this.handleRemove(this.props.villager)}
     ></i>
       : <i className="far fa-heart"

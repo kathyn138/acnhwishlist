@@ -15,6 +15,12 @@ type VillagerListProps = {
     image: string,
     personality: string
   }[],
+  wishlist: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }[],
   returnVillagersSearch: (newVillagers: {
     id: string,
     name: string,
@@ -33,7 +39,6 @@ type VillagerListProps = {
     image: string,
     personality: string
   }) => void,
-  checkWishlist: (name: string) => boolean;
 }
 
 type VillagerListState = {
@@ -87,8 +92,8 @@ class VillagerList extends React.PureComponent<VillagerListProps> {
     // let header = this.state.searching ? "" : <h3>{this.props.match.params.personality} Villagers</h3>;
 
     let villagers = this.props.villagers.map(v =>
-      <VillagerCard villager={v} addToWishlist={this.props.addToWishlist}
-        checkWishlist={this.props.checkWishlist}
+      <VillagerCard villager={v} wishlist={this.props.wishlist}
+        addToWishlist={this.props.addToWishlist}
         removeFromWishlist={this.props.removeFromWishlist}
       />);
 

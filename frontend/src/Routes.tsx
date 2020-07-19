@@ -9,6 +9,12 @@ type RouteProps = {
     image: string,
     personality: string
   }[],
+  wishlist: {
+    id: string,
+    name: string,
+    image: string,
+    personality: string
+  }[],
   returnVillagersSearch: (newVillagers: {
     id: string,
     name: string,
@@ -27,7 +33,6 @@ type RouteProps = {
     image: string,
     personality: string
   }) => void,
-  checkWishlist: (name: string) => boolean;
 };
 
 class Routes extends React.PureComponent<RouteProps> {
@@ -37,9 +42,9 @@ class Routes extends React.PureComponent<RouteProps> {
         <Switch>
           <Route exact path="/" render={() => <Home
             villagers={this.props.villagers}
+            wishlist={this.props.wishlist}
             returnVillagersSearch={this.props.returnVillagersSearch}
             addToWishlist={this.props.addToWishlist}
-            checkWishlist={this.props.checkWishlist} 
             removeFromWishlist={this.props.removeFromWishlist} />} />
           <Redirect to="/" />
         </Switch>
