@@ -7,6 +7,9 @@ import NavBar from './NavBar';
 import Routes from './Routes';
 import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-151524212-3');
+ReactGA.pageview('/homepage');
+
 type appState = {
   wishlist: {
     id: string,
@@ -37,9 +40,6 @@ class App extends React.PureComponent<{}, appState> {
   async componentDidMount() {
     let wake = await wishlistApi.wakeBackend();
     console.log(wake);
-
-    ReactGA.initialize('UA-151524212-3');
-    ReactGA.pageview('/homepage');
   }
 
   async filterVillagers(personalities: string[], species: string[]) {
