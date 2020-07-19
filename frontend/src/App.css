@@ -1,3 +1,13 @@
 .App {
   height: 90vh;
 }
+.about-link-col {
+  padding-right: 60px;
+}
+.about-btn {
+  height: 80px;
+  filter: drop-shadow(10px 5px 4px #888888);
+}
+.about-btn:hover { 
+  opacity: 0.5;
+}
