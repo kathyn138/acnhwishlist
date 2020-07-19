@@ -1,14 +1,14 @@
-# Animal Crossing Villager Wish List 
+# ACNH Villager Wish List 
 
-Animal Crossing Villager Wish List (pending name) is a full stack 
-villager wish list maker built with React, Typescript, Node, and PostgreSQL. 
+ACNH Villager Wish List is a full stack wish list maker 
+built with React, Typescript, Node, and PostgreSQL. 
 
 It is currently a work in progress. 
 
 Users can browse for their favorite villagers and create a wish list for villagers they would love to have in their town. 
-Wishlists can be exported to the user's clipboard.  
+Wish lists can be exported to the user's clipboard.  
 
-![Mockup of Cranky Page](frontend/src/assets/cranky-demo.png "Screenshot of Cranky Demo")
+![Screenshot of Demo](https://cdn.discordapp.com/attachments/709285942430531650/734241366166601728/unknown.png)
 
 ## To Do 
 - [x] Create database of villagers 
@@ -24,12 +24,9 @@ Wishlists can be exported to the user's clipboard.
 App
 ├── NavBar
 ├──┬ Routes
-│  ├─┬ Home
-│  │ ├── SearchBar  
-│  │ └── VillagerCard 
-│  └─┬ VillagerList
+│  └─┬ Home
 │    ├── SearchBar  
-│    └── VillagerCard
+│    └── VillagerCard    
 └─┬ Wishlist
   └── WishlistCard
 ```
