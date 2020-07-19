@@ -5,6 +5,7 @@ import wishlistApi from './wishlistApi';
 import Wishlist from './Wishlist';
 import NavBar from './NavBar';
 import Routes from './Routes';
+import ReactGA from 'react-ga';
 
 type appState = {
   wishlist: {
@@ -98,6 +99,11 @@ class App extends React.PureComponent<{}, appState> {
       </React.Fragment>
     );
   }
+}
+
+function initializeReactGA() {
+  ReactGA.initialize('UA-151524212-3');
+  ReactGA.pageview('/homepage');
 }
 
 export default App;
