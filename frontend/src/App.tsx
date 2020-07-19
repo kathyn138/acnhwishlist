@@ -34,8 +34,8 @@ class App extends React.PureComponent<{}, appState> {
   }
 
   async componentDidMount() {
-    // let wake = await wishlistApi.wakeBackend();
-    // console.log(wake);
+    let wake = await wishlistApi.wakeBackend();
+    console.log(wake);
   }
 
   async filterVillagers(personalities: string[], species: string[]) {
