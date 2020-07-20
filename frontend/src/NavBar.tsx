@@ -2,7 +2,6 @@ import React from 'react';
 import './NavBar.css';
 import PersonalitiesMenu from './PersonalitiesMenu';
 import SpeciesMenu from './SpeciesMenu';
-import { Link } from "react-router-dom";
 
 type NavBarState = {
   openPersonalities: boolean,
