@@ -6,8 +6,22 @@
 }
 .about-btn {
   height: 80px;
+  margin-top: 20px;
   filter: drop-shadow(10px 5px 4px #888888);
 }
 .about-btn:hover { 
   opacity: 0.5;
+}
+.home-nav {
+  margin-top: 20px;
+  text-align: center;
+  min-width: 35px;
+}
+.home-btn {
+  color: #FFFFFF;
+  font-size: 30px;
+  filter: drop-shadow(6px 5px 4px #888888);
+}
+.home-btn:hover {
+  color: rgb(87, 199, 183);
 }

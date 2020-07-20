@@ -1,12 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Link } from "react-router-dom";
-import './App.css';
 import wishlistApi from './wishlistApi';
-import Wishlist from './Wishlist';
-import NavBar from './NavBar';
 import Routes from './Routes';
 import ReactGA from 'react-ga';
-// import $ from 'jquery';
+import './App.css';
 
 ReactGA.initialize('UA-151524212-3');
 ReactGA.pageview('/homepage');
@@ -24,10 +21,6 @@ type appState = {
     image: string,
     personality: string
   }[];
-}
-
-interface JQuery {
-  tooltip() : any;
 }
 
 class App extends React.PureComponent<{}, appState> {
@@ -97,27 +90,24 @@ class App extends React.PureComponent<{}, appState> {
               <div className="col about-link-col">
                 <Link to="/about">
                   <img
-                  data-toggle="tooltip" data-placement="top" title="About"
+                    data-toggle="tooltip" data-placement="top" title="About"
                     className="about-btn"
                     src="https://cdn.discordapp.com/attachments/709285942430531650/734388307949125742/balloon-present.png"
                     alt=""
-                    ></img>
+                  ></img>
                 </Link>
-
               </div>
             </div>
           </div>
-          <NavBar filterVillagers={this.filterVillagers}
-            goHome={this.goHome} />
           <div className="App container-fluid">
-            <div className="row">
               <Routes
                 villagers={this.state.villagers}
                 wishlist={this.state.wishlist}
                 returnVillagersSearch={this.returnVillagersSearch}
                 addToWishlist={this.addToWishlist}
-                removeFromWishlist={this.removeFromWishlist} />
-            </div>
+                removeFromWishlist={this.removeFromWishlist}
+                filterVillagers={this.filterVillagers}
+                goHome={this.goHome} />
           </div>
         </BrowserRouter>
       </React.Fragment>
