@@ -28,9 +28,20 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
         'Rhino', 'Sheep', 'Squirrel', 'Tiger', 'Wolf']
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(evt: MouseEvent<HTMLButtonElement>) {
+    if (!this.props.openSpecies) {
+      this.props.handleToggle('species', 'open');
+    } else {
+      this.props.handleToggle('species', 'closed');
+    }
+  }
+
+  handleSubmit(evt: React.FormEvent<HTMLButtonElement>) {
+    this.props.handleMenuFilter(evt);
+
     if (!this.props.openSpecies) {
       this.props.handleToggle('species', 'open');
     } else {
@@ -64,7 +75,7 @@ class SpeciesMenu extends React.PureComponent<SpeciesMenuProps, SpeciesMenuState
             </div>
 
             <button type="button" className="btn float-right 
-            submit-species-btn" onClick={this.props.handleMenuFilter}>Submit</button>
+            submit-species-btn" onClick={this.handleSubmit}>Submit</button>
           </div>
         </div>
       </div>

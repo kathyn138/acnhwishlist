@@ -23,9 +23,20 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
         'Snooty', 'Uchi'],
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(evt: MouseEvent<HTMLButtonElement>) {
+    if (!this.props.openPersonalities) {
+      this.props.handleToggle('personalities', 'open');
+    } else {
+      this.props.handleToggle('personalities', 'closed');
+    }
+  }
+
+  handleSubmit(evt: React.FormEvent<HTMLButtonElement>) {
+    this.props.handleMenuFilter(evt);
+
     if (!this.props.openPersonalities) {
       this.props.handleToggle('personalities', 'open');
     } else {
@@ -59,7 +70,7 @@ class PersonalitiesMenu extends React.PureComponent<PersonalitiesMenuProps, Pers
             </div>
 
             <button type="button" className="btn float-right 
-            submit-personality-btn" onClick={this.props.handleMenuFilter}>Submit</button>
+            submit-personality-btn" onClick={this.handleSubmit}>Submit</button>
           </div>
         </div>
       </div>
