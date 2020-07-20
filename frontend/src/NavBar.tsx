@@ -100,14 +100,8 @@ class NavBar extends React.PureComponent<NavBarProps, NavBarState> {
 
   render() {
     return (
-      <div className="container navbar-container">
-        <div className="row justify-content-center navbar-row">
-
-          <div className="col-1 home-nav">
-            <Link to="/"><i className="fas fa-home"
-              onClick={this.props.goHome}></i></Link>
-          </div>
-
+      <div className="col navbar-container">
+        <div className="row navbar-row">
           <div className="col">
             <PersonalitiesMenu
               handleMenuFilter={this.handleSubmit}
