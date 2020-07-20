@@ -1,10 +1,7 @@
 .about-data {
-    /* position: relative; */
 	height: 300px;
-    width: 40%;
-    margin-top: 60px;
-	/* left: 15%; */
-	/* z-index: 1; */
+	width: 40%;
+	margin: 75px auto;
 	background: #FFFAE4;
 	color: #837457;
 	border-radius: .25rem;
@@ -12,4 +9,7 @@
 .about-header {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+.about-data a {
+	text-decoration: none;
 }

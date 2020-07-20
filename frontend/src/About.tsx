@@ -8,15 +8,17 @@ ReactGA.pageview('/about');
 class About extends React.PureComponent<{}> {
   render() {
     return (
-      <div className="col text-center">
-        <div className="about-data">
-          <h4 className="about-header">About</h4>
-          <p>
-            Made with ♥ by <a href="https://twitter.com/astralditto" target="_blank">astralditto</a>
-          </p>
-          <p>
-            Background by <a href="https://twitter.com/gofthie" target="_blank">gofthie</a>
-          </p>
+      <div className="row">
+        <div className="col text-center">
+          <div className="about-data">
+            <h4 className="about-header">About</h4>
+            <p>
+              Made with ♥ by <a href="https://twitter.com/astralditto" target="blank" rel="noopener noreferrer">astralditto</a>
+            </p>
+            <p>
+              Background by <a href="https://twitter.com/gofthie" target="blank" rel="noopener noreferrer">gofthie</a>
+            </p>
+          </div>
         </div>
       </div>
     );
