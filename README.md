@@ -5,6 +5,8 @@ built with React, Typescript, Node, and PostgreSQL.
 
 It is currently a work in progress. 
 
+ACNH Villager Wish List is [live on Netlify](https://acnhvwl.netlify.app/).
+
 Users can browse for their favorite villagers and create a wish list for villagers they would love to have in their town. 
 Wish lists can be exported to the user's clipboard.  
 
