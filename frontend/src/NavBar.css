@@ -1,17 +1,6 @@
-.navbar-container {
-    width: 70%;
-}
 .navbar-row {
     margin-top: 20px;
-}
-.home-nav {
-    color: #FFFFFF;
-    font-size: 30px;
-    margin-top: .5rem;
-    text-align: center;
-}
-.home-nav:hover {
-    color: rgb(87, 199, 183);
+    width: 80%;
 }
 .dropdown span {
     float: left;
