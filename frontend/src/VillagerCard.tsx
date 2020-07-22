@@ -1,6 +1,6 @@
 import React from 'react';
 import './VillagerCard.css';
-import VillagerZoom from './VillagerZoom';
+import VillagerModal from './VillagerModal';
 
 type VillagerCardProps = {
   villager: {
@@ -32,6 +32,7 @@ type VillagerCardProps = {
 type VillagerCardState = {
   zoomIntoImage: boolean;
 }
+
 class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardState> {
   constructor(props: VillagerCardProps) {
     super(props);
@@ -84,31 +85,13 @@ class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardSt
 
     return (
       <React.Fragment>
-        {/* {this.state.zoomIntoImage ? <VillagerZoom /> : ''} */}
+        {this.state.zoomIntoImage ? <VillagerModal /> : ''}
 
-        <div className="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                ...
-      </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div className="card my-auto">
           <div className="row no-gutters">
             <div className="col-lg-2 d-flex align-items-center justify-content-center">
-              <img src={image} className="card-img" alt={`${name}`} data-toggle="modal" data-target="#exampleModal" />
+              <img src={image} className="card-img" alt={`${name}`} onClick={this.handleImageClick} />
             </div>
             <div className="col-lg-8 my-auto">
               <div className="card-body text-center">
