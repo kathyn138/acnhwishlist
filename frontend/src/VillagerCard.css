@@ -11,6 +11,9 @@
     height: 100px;
     width: auto;
 }
+.card-img:hover {
+    cursor: zoom-in;
+}
 .fa-heart {
     font-size: 20px;
 }

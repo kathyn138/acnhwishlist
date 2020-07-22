@@ -1,5 +1,6 @@
 import React from 'react';
 import './VillagerCard.css';
+import VillagerZoom from './VillagerZoom';
 
 type VillagerCardProps = {
   villager: {
@@ -28,10 +29,17 @@ type VillagerCardProps = {
   }) => void,
 }
 
-class VillagerCard extends React.PureComponent<VillagerCardProps> {
+type VillagerCardState = {
+  zoomIntoImage: boolean;
+}
+class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardState> {
   constructor(props: VillagerCardProps) {
     super(props);
+    this.state = {
+      zoomIntoImage: false
+    };
     this.handleAdd = this.handleAdd.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   async handleAdd(villager: {
@@ -52,10 +60,14 @@ class VillagerCard extends React.PureComponent<VillagerCardProps> {
     await this.props.removeFromWishlist(this.props.villager);
   }
 
+  handleImageClick() {
+    this.setState({ zoomIntoImage: true });
+  }
+
   render() {
     let { name, image } = this.props.villager;
 
-    let onWishlist = false; 
+    let onWishlist = false;
 
     if (this.props.wishlist.filter(villager => villager.name === name).length === 1) {
       onWishlist = true;
@@ -71,23 +83,46 @@ class VillagerCard extends React.PureComponent<VillagerCardProps> {
       ></i>;
 
     return (
-      <div className="card my-auto">
-        <div className="row no-gutters">
-          <div className="col-lg-2 d-flex align-items-center justify-content-center">
-            <img src={image} className="card-img" alt={`${name}`} />
-          </div>
-          <div className="col-lg-8 my-auto">
-            <div className="card-body text-center">
-              {name}
+      <React.Fragment>
+        {/* {this.state.zoomIntoImage ? <VillagerZoom /> : ''} */}
+
+        <div className="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                ...
+      </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" className="btn btn-primary">Save changes</button>
+              </div>
             </div>
           </div>
-          <div className="col-lg-2 my-auto">
-            <span className="heart-btn">
-              {heart}
-            </span>
+        </div>
+        <div className="card my-auto">
+          <div className="row no-gutters">
+            <div className="col-lg-2 d-flex align-items-center justify-content-center">
+              <img src={image} className="card-img" alt={`${name}`} data-toggle="modal" data-target="#exampleModal" />
+            </div>
+            <div className="col-lg-8 my-auto">
+              <div className="card-body text-center">
+                {name}
+              </div>
+            </div>
+            <div className="col-lg-2 my-auto">
+              <span className="heart-btn">
+                {heart}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
