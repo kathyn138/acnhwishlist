@@ -62,7 +62,7 @@ class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardSt
   }
 
   handleImageClick() {
-    this.setState({ zoomIntoImage: true });
+    this.setState({ zoomIntoImage: !this.state.zoomIntoImage });
   }
 
   render() {
@@ -85,13 +85,15 @@ class VillagerCard extends React.PureComponent<VillagerCardProps, VillagerCardSt
 
     return (
       <React.Fragment>
-        {this.state.zoomIntoImage ? <VillagerModal /> : ''}
-
+        {this.state.zoomIntoImage ? <VillagerModal 
+        cardToggle={this.handleImageClick} image={image} /> : ''}
 
         <div className="card my-auto">
           <div className="row no-gutters">
-            <div className="col-lg-2 d-flex align-items-center justify-content-center">
-              <img src={image} className="card-img" alt={`${name}`} onClick={this.handleImageClick} />
+            <div className="col-lg-2 d-flex align-items-center 
+              justify-content-center">
+              <img src={image} className="card-img" alt={`${name}`} 
+                onClick={this.handleImageClick} />
             </div>
             <div className="col-lg-8 my-auto">
               <div className="card-body text-center">

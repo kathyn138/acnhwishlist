@@ -1,0 +1,7 @@
+.modal-header {
+    padding: .5rem 1rem;
+}
+.modal-body img {
+    max-width: 70%;
+    height: auto; 
+}
