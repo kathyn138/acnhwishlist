@@ -1,6 +1,6 @@
 import React from 'react';
 import './Wishlist.css';
-import WishlistCard from './WishlistCard';
+import WishlistCard from '../WishlistCard';
 
 type WishlistProps = {
   wishlist: {

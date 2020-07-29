@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavBar.css';
-import PersonalitiesMenu from './PersonalitiesMenu';
-import SpeciesMenu from './SpeciesMenu';
+import PersonalitiesMenu from '../PersonalitiesMenu';
+import SpeciesMenu from '../SpeciesMenu';
 
 type NavBarState = {
   openPersonalities: boolean,

@@ -1,6 +1,6 @@
 import React from 'react';
 import './VillagerList.css';
-import VillagerCard from './VillagerCard';
+import VillagerCard from '../VillagerCard';
 
 type VillagerListProps = {
   villagers: {

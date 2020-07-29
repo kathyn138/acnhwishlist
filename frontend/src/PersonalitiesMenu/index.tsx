@@ -1,6 +1,6 @@
 import React from 'react';
 import { MouseEvent } from 'react';
-import NavBarLink from './NavBarLink'; 
+import NavBarLink from '../NavBarLink'; 
 import './PersonalitiesMenu.css';
 
 type PersonalitiesMenuProps = {

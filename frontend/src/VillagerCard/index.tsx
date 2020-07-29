@@ -1,6 +1,6 @@
 import React from 'react';
 import './VillagerCard.css';
-import VillagerModal from './VillagerModal';
+import VillagerModal from '../VillagerModal';
 
 type VillagerCardProps = {
   villager: {

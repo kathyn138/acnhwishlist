@@ -1,8 +1,8 @@
 import React from 'react';
 import './Home.css';
-import SearchBar from './SearchBar';
-import wishlistApi from './wishlistApi';
-import VillagerList from './VillagerList';
+import SearchBar from '../SearchBar';
+import wishlistApi from '../wishlistApi';
+import VillagerList from '../VillagerList';
 
 type HomeProps = {
   villagers: {
