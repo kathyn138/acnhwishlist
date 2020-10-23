@@ -3,15 +3,15 @@
 ACNH Villager Wish List is a full stack wish list maker 
 built with React, Typescript, Node, and PostgreSQL. 
 
-It is currently a work in progress. 
-
 ACNH Villager Wish List is [live on Netlify](https://acnhvwl.netlify.app/).
 
 Users can browse for their favorite villagers and create a wish list for villagers they would love to have in their town. 
 Users can click on a villager's image to view a bigger picture of the image. 
 Wish lists can be exported to the user's clipboard.  
 
-![Screenshot of Demo](https://cdn.discordapp.com/attachments/709285942430531650/734586758645284904/demo-screenshot.png)
+
+[![Screenshot of Demo Video](https://cdn.discordapp.com/attachments/709643259789705317/769330360516739132/unknown.png)](https://www.youtube.com/watch?v=7gzCTY59eqY)
+
 
 ## To Do 
 - [x] Filter by animal type and personality
