@@ -13,9 +13,6 @@ class About extends React.PureComponent<{}> {
           <div className="about-data">
             <h4 className="about-header">About</h4>
             <p>
-              Made with ♥ by <a href="https://twitter.com/astralditto" target="blank" rel="noopener noreferrer">astralditto</a>
-            </p>
-            <p>
               Background by <a href="https://twitter.com/gofthie" target="blank" rel="noopener noreferrer">gofthie</a>
             </p>
           </div>
