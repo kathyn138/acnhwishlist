@@ -30,4 +30,4 @@ App
 ```
 
 ## Future Implementations
-- Create user accounts that allow for saving and sharing wish lists 
+- Convert class components into functional components and use React Hooks!
