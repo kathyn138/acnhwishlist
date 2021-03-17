@@ -5,6 +5,7 @@ import Routes from './Routes';
 import ReactGA from 'react-ga';
 import './App.css';
 
+// for google analytics 
 ReactGA.initialize('UA-151524212-3');
 ReactGA.pageview('/homepage');
 
@@ -38,9 +39,12 @@ class App extends React.PureComponent<{}, appState> {
   }
 
   async componentDidMount() {
+    // for deployed project
+    // heroku backend needs some time to wake up
     let wake = await wishlistApi.wakeBackend();
     console.log(wake);
 
+    // enable tooltips for about tooltip
     ($('[data-toggle="tooltip"]') as any).tooltip();
   }
 
