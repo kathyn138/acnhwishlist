@@ -202,7 +202,7 @@ let species = [
 ];
 
 // route to update species of villagers in database
-router.post("/updatespecies", async function (req, res, next) {
+router.post("/db/update", async function (req, res, next) {
   for (let i = 0; i < species.length; i++) {
     for (let j = 0; j < species[i].length; j++) {
       let type = speciesType[i];

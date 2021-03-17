@@ -14,8 +14,9 @@ let personalityTypes = [crankyVillagers, jockVillagers, lazyVillagers,
 let folderNames = ['Cranky', 'Jock', 'Lazy', 'Normal', 'Peppy', 'Smug',
   'Snooty', 'Uchi'];
 
-router.post("/wtf", async function () {
-
+// route for populating the database
+// does not include species data
+router.post("/db/fill", async function () {
   for (let i = 0; i < personalityTypes.length; i++) {
     for (let j = 0; j < personalityTypes[i].length; j++) {
       let name = personalityTypes[i][j];
