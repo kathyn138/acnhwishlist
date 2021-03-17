@@ -201,8 +201,8 @@ let species = [
   rhino, sheep, squirrel, tiger, wolf
 ];
 
-router.post("/wtf", async function (req, res, next) {
-
+// route to update species of villagers in database
+router.post("/updatespecies", async function (req, res, next) {
   for (let i = 0; i < species.length; i++) {
     for (let j = 0; j < species[i].length; j++) {
       let type = speciesType[i];
