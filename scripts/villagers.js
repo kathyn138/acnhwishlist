@@ -1,3 +1,5 @@
+// masterlist of villagers sorted by personality types
+
 let crankyVillagers = [
   'Admiral', 'Angus', 'Apollo', 'Avery', 'Boris', 'Boyd', 'Bruce',
   'Butch', 'Buzz', 'Camofrog', 'Cesar', 'Chief', 'Chow',

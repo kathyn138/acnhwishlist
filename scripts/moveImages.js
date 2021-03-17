@@ -10,6 +10,9 @@ let personalityTypes = [crankyVillagers, jockVillagers, lazyVillagers,
 let folderNames = ['cranky', 'jock', 'lazy', 'normal', 'peppy', 'smug',
   'snooty', 'uchi'];
 
+// move villager images into folders
+// sorted by personality types 
+
 for (let i = 0; i < personalityTypes.length; i++) {
   for (let j = 0; j < personalityTypes[i].length; j++) {
     let currVillager = personalityTypes[i][j];
