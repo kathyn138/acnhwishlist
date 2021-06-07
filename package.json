@@ -1,21 +1,5 @@
 {
-  "name": "villagerwishlist",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "locus": "^2.0.1",
-    "lodash": "^4.17.19",
-    "morgan": "^1.9.0",
-    "pg": "^8.0.3"
+    "start": "node backend/server.js"
   }
 }
