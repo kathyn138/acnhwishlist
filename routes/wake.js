@@ -7,7 +7,7 @@ const router = new express.Router();
 
 router.get("/", async function (req, res, next) {
   try {
-    return res.json("hi i'm awake :3");
+    return res.json("hi i'm awake :3 sanity check frontend");
   } catch (err) {
     return next(err);
   }
