@@ -15,6 +15,9 @@ class About extends React.PureComponent<{}> {
             <p>
               Background by <a href="https://twitter.com/gofthie" target="blank" rel="noopener noreferrer">gofthie</a>
             </p>
+            <p>
+              Last updated: December 15, 2022
+            </p>
           </div>
         </div>
       </div>
