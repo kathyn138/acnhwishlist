@@ -9,7 +9,6 @@ if (process.env.DATABASE_URL) {
     config = {
         connectionString: process.env.DATABASE_URL
     }
-    console.log('uhh', process.env.DATABASE_URL)
 } else {
     config = {
         connectionString: "postgresql:///villagerwishlist"
