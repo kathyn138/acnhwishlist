@@ -13,7 +13,6 @@ if (process.env.DATABASE_URL) {
     config = {
         connectionString: "postgresql:///villagerwishlist"
     }
-    console.log('as')
 }
 
 const client = new Client(config);
