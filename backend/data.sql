@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.2
--- Dumped by pg_dump version 12.2
+-- Dumped from database version 14.6 (Homebrew)
+-- Dumped by pg_dump version 14.6 (Homebrew)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -462,6 +462,27 @@ COPY public.villagers (id, name, image, personality, species) FROM stdin;
 373	Agnes	https://cdn.discordapp.com/attachments/709286174879121519/710341248262864976/Agnes.png	Uchi	Pig
 380	Frita	https://cdn.discordapp.com/attachments/709286174879121519/710341292907036712/Frita.png	Uchi	Sheep
 385	Muffy	https://cdn.discordapp.com/attachments/709286174879121519/710341345608204500/Muffy.png	Uchi	Sheep
+397	Chelsea	https://cdn.discordapp.com/attachments/709286174879121519/1053044829711503420/287.png	Normal	Deer
+398	Etoile	https://cdn.discordapp.com/attachments/709286174879121519/1053048085598715975/zz1616992201etoilepng.png	Normal	Sheep
+399	Marty	https://cdn.discordapp.com/attachments/709286174879121519/1053048390130335815/MartyPNG.png	Lazy	Cub
+400	Rilla	https://cdn.discordapp.com/attachments/709286174879121519/1053049095117344818/image.png	Peppy	Gorilla
+401	Toby	https://cdn.discordapp.com/attachments/709286174879121519/1053049425573978112/latest.png	Smug	Rabbit
+402	Ace	https://cdn.discordapp.com/attachments/709286174879121519/1053049664200507523/latest.png	Jock	Bird
+403	Azalea	https://cdn.discordapp.com/attachments/709286174879121519/1053049845436387378/latest.png	Snooty	Rhino
+404	Cephalobot	https://cdn.discordapp.com/attachments/709286174879121519/1053050129353019502/latest.png	Smug	Octopus
+405	Chabwick	https://cdn.discordapp.com/attachments/709286174879121519/1053050338380357682/latest.png	Lazy	Penguin
+406	Faith	https://cdn.discordapp.com/attachments/709286174879121519/1053050647395717161/latest.png	Uchi	Koala
+407	Frett	https://cdn.discordapp.com/attachments/709286174879121519/1053052685370269806/latest.png	Cranky	Dog
+408	Ione	https://cdn.discordapp.com/attachments/709286174879121519/1053052880346697748/latest.png	Normal	Squirrel
+409	Marlo	https://cdn.discordapp.com/attachments/709286174879121519/1053053028091052083/latest.png	Cranky	Hamster
+410	Petri	https://cdn.discordapp.com/attachments/709286174879121519/1053053188535763025/latest.png	Snooty	Mouse
+411	Quinn	https://cdn.discordapp.com/attachments/709286174879121519/1053053866607906976/latest.png	Uchi	Eagle
+412	Rio	https://cdn.discordapp.com/attachments/709286174879121519/1053054015434403960/latest.png	Peppy	Ostrich
+413	Roswell	https://cdn.discordapp.com/attachments/709286174879121519/1053054166605504665/latest.png	Smug	Alligator
+414	Sasha	https://cdn.discordapp.com/attachments/709286174879121519/1053054313934631014/latest.png	Lazy	Rabbit
+415	Shino	https://cdn.discordapp.com/attachments/709286174879121519/1053054498047803492/latest.png	Peppy	Deer
+416	Tiansheng	https://cdn.discordapp.com/attachments/709286174879121519/1053054654390468698/latest.png	Jock	Monkey
+417	Zoe	https://cdn.discordapp.com/attachments/709286174879121519/1053054798276067489/latest.png	Normal	Anteater
 \.
 
 
