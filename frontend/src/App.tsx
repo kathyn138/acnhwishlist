@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Link } from "react-router-dom";
 import wishlistApi from './wishlistApi';
 import Routes from './Routes';
-import ReactGA from 'react-ga';
 import './App.css';
 
 type appState = {
