@@ -91,8 +91,8 @@ class App extends React.PureComponent<{}, appState> {
                   <img
                     data-toggle="tooltip" data-placement="top" title="About"
                     className="about-btn"
-                    src="https://cdn.discordapp.com/attachments/709285942430531650/734388307949125742/balloon-present.png"
-                    alt=""
+                    src="https://github.com/kathyn138/acnhwishlist/blob/master/frontend/src/Assets/balloon-present.png?raw=true"
+                    alt="about"
                   ></img>
                 </Link>
               </div>
