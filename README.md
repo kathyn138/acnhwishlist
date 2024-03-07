@@ -10,7 +10,7 @@ Users can click on a villager's image to view a bigger picture of the image.
 Wish lists can be exported to the user's clipboard.  
 
 
-[![Screenshot of Demo Video](https://cdn.discordapp.com/attachments/709643259789705317/769330360516739132/unknown.png)](https://www.youtube.com/watch?v=7gzCTY59eqY)
+[![Screenshot of Demo Video](frontend/public/demo-ss.webp)](https://www.youtube.com/watch?v=7gzCTY59eqY)
 
 
 ## To Do 
