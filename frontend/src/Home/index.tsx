@@ -50,7 +50,7 @@ class Home extends React.PureComponent<HomeProps> {
 
   render() {
     let welcomeMessage = <React.Fragment>
-      <img className="welcome-isabelle" src="https://github.com/kathyn138/acnhwishlist/blob/master/frontend/src/Assets/welcome-isabelle.png" alt="isabelle welcoming you"></img>
+      <img className="welcome-isabelle" src="https://github.com/kathyn138/acnhwishlist/blob/master/frontend/src/Assets/welcome-isabelle.png?raw=true" alt="isabelle welcoming you"></img>
       <p className="home-message">
         Search for your favorite villager or
         click on any of the personality categories to get started!
