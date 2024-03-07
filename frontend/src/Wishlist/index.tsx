@@ -34,7 +34,7 @@ class Wishlist extends React.PureComponent<WishlistProps> {
           </div>
 
           <button type="button" className="btn wishlist-copy-btn"
-            onClick={() => { navigator.clipboard.writeText(wishlistNames.join(', ')) }}>
+            onClick={() => { navigator.clipboard.writeText(wishlistNames.join(', ')); }}>
             Copy to Clipboard</button>
         </div>
       </div>

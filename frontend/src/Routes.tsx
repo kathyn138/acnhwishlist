@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch, Redirect, Link } from "react-router-dom";
 import Home from './Home';
-import Wishlist from './Wishlist'
+import Wishlist from './Wishlist';
 import About from './About';
-import NavBar from './NavBar'
+import NavBar from './NavBar';
 
 type RouteProps = {
   villagers: {
