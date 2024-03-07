@@ -43,7 +43,7 @@ fs.readFile('imageUrls.txt', 'utf8', function (err, data) {
       newFileName = currFileName;
     }
 
-    download(dataList[i], `./assets/villagers/${newFileName}.png`, console.log(`downloaded ${newFileName}.png`))
+    download(dataList[i], `./${newFileName}.png`, console.log(`downloaded ${newFileName}.png`))
   }
 });
 
