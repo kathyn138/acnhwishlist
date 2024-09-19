@@ -10,9 +10,11 @@ app.use(morgan("tiny"));
 
 const villagersRoutes = require("./routes/villagers");
 const wakeRoutes = require("./routes/wake");
+const fillSpecies = require("./fillSpecies");
 
 app.use("/villagers", villagersRoutes);
-app.use("/", wakeRoutes);
+app.use("/", wakeRoutes)
+app.use("/fillSpecies", fillSpecies);
 
 /** 404 Not Found handler. */
 
